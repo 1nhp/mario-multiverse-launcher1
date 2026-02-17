@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://dqbeo73xfvcg0"]
+
+[ext_resource type="Script" uid="uid://bdnnc3kq1qwlx" path="res://scenes/launchersettings/settings.gd" id="1_bmvfj"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2_4cq0a"]
+[ext_resource type="Texture2D" uid="uid://cps556gm36h6l" path="res://sprites/settings_bg.png" id="2_hobxt"]
+[ext_resource type="Texture2D" uid="uid://dp0o8a7l7d6mj" path="res://sprites/window.png" id="3_aspww"]
+[ext_resource type="Script" uid="uid://dr0uf7jg2p20w" path="res://scripts/label_button.gd" id="5_uscfh"]
+[ext_resource type="Texture2D" uid="uid://c4r020bdmkfvv" path="res://sprites/window2.png" id="6_uscfh"]
+[ext_resource type="Texture2D" uid="uid://dsheq11jd4gty" path="res://sprites/quit_icon.png" id="7_cn38x"]
+
+[node name="LauncherSettings" type="CanvasLayer" unique_id=473513821]
+script = ExtResource("1_bmvfj")
+
+[node name="Root" type="Control" parent="." unique_id=1804042524]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Parallax2D" type="Parallax2D" parent="Root" unique_id=963779646]
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(1259.745, 720)
+autoscroll = Vector2(40, 40)
+repeat_times = 8
+limit_begin = Vector2(0, 0)
+limit_end = Vector2(0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="Root/Parallax2D" unique_id=478944019]
+texture_filter = 1
+texture_repeat = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("2_hobxt")
+stretch_mode = 1
+
+[node name="header" type="Label" parent="Root" unique_id=796907200]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 12.0
+offset_right = 491.0
+offset_bottom = 82.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 2
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("2_4cq0a")
+theme_override_font_sizes/font_size = 40
+text = "LAUNCHER SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UI" type="Control" parent="Root" unique_id=783562485]
+z_index = 1
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Window" type="Control" parent="Root/UI" unique_id=1714282745]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -304.0
+offset_right = 608.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/Window" unique_id=1064188287]
+modulate = Color(1, 1, 1, 0.60784316)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 56.0
+offset_top = 18.0
+offset_right = -56.0
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_aspww")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+
+[node name="MenuButtons" type="Control" parent="Root/UI" unique_id=1857218372]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -16.0
+grow_vertical = 0
+focus_mode = 2
+mouse_filter = 2
+
+[node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=498265734]
+anchors_preset = 0
+offset_left = -9.0
+offset_top = -4.0
+offset_right = 39.0
+offset_bottom = 44.0
+pivot_offset = Vector2(16, 16)
+focus_neighbor_left = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+script = ExtResource("5_uscfh")
+popup_right_offset = -50
+popup_top_offset = -40
+icon_right_offset = 90
+popup_text = "Go back"
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/Quit" unique_id=65311907]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_uscfh")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/Quit/BG" unique_id=2083265066]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.5
+offset_top = -15.0
+offset_right = 19.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_cn38x")
+stretch_mode = 4
+
+[node name="TOP" type="Control" parent="Root/UI" unique_id=2045733807]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Buttons" type="Control" parent="Root/UI" unique_id=20629747]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/MenuButtons/Quit" to="." method="_on_quit_pressed"]

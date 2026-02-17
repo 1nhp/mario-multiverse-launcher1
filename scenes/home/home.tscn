@@ -1,0 +1,298 @@
+[gd_scene format=3 uid="uid://cntno330yx08l"]
+
+[ext_resource type="Script" uid="uid://dp5ltjxbwp7s8" path="res://scenes/home/home.gd" id="1_5q1ba"]
+[ext_resource type="Texture2D" uid="uid://ojhmb0pcrish" path="res://sprites/logo.png" id="2_ng36q"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="4_4jjk6"]
+[ext_resource type="Texture2D" uid="uid://de1jqq6m4mn8p" path="res://sprites/menu_button.png" id="4_uqp2i"]
+[ext_resource type="Texture2D" uid="uid://dsheq11jd4gty" path="res://sprites/quit_icon.png" id="4_vest7"]
+[ext_resource type="Script" uid="uid://dr0uf7jg2p20w" path="res://scripts/label_button.gd" id="4_vut6t"]
+[ext_resource type="Texture2D" uid="uid://ckwioup064bqt" path="res://sprites/settings_icon.png" id="5_vest7"]
+[ext_resource type="Script" uid="uid://bgkpvssux5ueh" path="res://scenes/home/logo.gd" id="7_qkv0c"]
+
+[sub_resource type="Gradient" id="Gradient_5q1ba"]
+interpolation_mode = 2
+colors = PackedColorArray(0.12108789, 0.38483936, 0.55794305, 1, 1.6845763e-07, 0.16847637, 0.25975224, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ng36q"]
+gradient = SubResource("Gradient_5q1ba")
+width = 256
+height = 256
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[node name="Home" type="CanvasLayer" unique_id=473513821]
+script = ExtResource("1_5q1ba")
+
+[node name="Root" type="Control" parent="." unique_id=1804042524]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Root" unique_id=478944019]
+texture_filter = 2
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_ng36q")
+flip_v = true
+
+[node name="UI" type="Control" parent="Root" unique_id=783562485]
+z_index = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="MenuButtons" type="Control" parent="Root/UI" unique_id=1857218372]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+focus_next = NodePath("Quit")
+focus_previous = NodePath("LauncherSettings")
+focus_mode = 2
+focus_behavior_recursive = 2
+mouse_filter = 2
+
+[node name="LauncherSettings" type="Control" parent="Root/UI/MenuButtons" unique_id=82761725]
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 12.0
+offset_right = -40.0
+offset_bottom = 76.0
+pivot_offset = Vector2(16, 16)
+script = ExtResource("4_vut6t")
+popup_right_offset = -130
+popup_top_offset = 70
+popup_text = "--SETTINGS--newlineChange launcher settings here!"
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/LauncherSettings" unique_id=1175654934]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_uqp2i")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/LauncherSettings/BG" unique_id=1375145461]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -24.0
+offset_right = 25.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_vest7")
+stretch_mode = 4
+
+[node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=1426720611]
+anchors_preset = 0
+offset_left = -33.0
+offset_top = 12.0
+offset_right = 32.0
+offset_bottom = 76.0
+pivot_offset = Vector2(16, 16)
+script = ExtResource("4_vut6t")
+popup_right_offset = -130
+popup_top_offset = 70
+popup_text = "--QUIT-- newlineBye bye..."
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/Quit" unique_id=1565647404]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_uqp2i")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/Quit/BG" unique_id=77215173]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -24.0
+offset_right = 20.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_vest7")
+stretch_mode = 4
+
+[node name="TOP" type="Control" parent="Root/UI" unique_id=2045733807]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="Logo" type="Sprite2D" parent="Root/UI/TOP" unique_id=1698766778]
+texture_filter = 1
+position = Vector2(0, 128)
+texture = ExtResource("2_ng36q")
+script = ExtResource("7_qkv0c")
+
+[node name="Buttons" type="Control" parent="Root/UI" unique_id=20629747]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 2
+focus_behavior_recursive = 2
+mouse_filter = 2
+
+[node name="Create" type="Control" parent="Root/UI/Buttons" unique_id=216272181]
+anchors_preset = 0
+offset_left = -320.0
+offset_top = -56.0
+offset_right = -144.0
+offset_bottom = -16.0
+pivot_offset = Vector2(0, 56)
+focus_next = NodePath("../Play")
+focus_mode = 2
+script = ExtResource("4_vut6t")
+popup_right_offset = -10
+popup_top_offset = -40
+popup_text = "Create a level!"
+
+[node name="text" type="Label" parent="Root/UI/Buttons/Create" unique_id=1068602820]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -46.0
+offset_right = 180.0
+offset_bottom = 24.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_font_sizes/font_size = 40
+text = "Create"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Control" parent="Root/UI/Buttons" unique_id=1648801615]
+anchors_preset = 0
+offset_left = -64.0
+offset_top = -56.0
+offset_right = 56.0
+offset_bottom = -8.0
+pivot_offset = Vector2(0, 56)
+focus_next = NodePath("../Options")
+focus_previous = NodePath("../Create")
+focus_mode = 2
+script = ExtResource("4_vut6t")
+popup_right_offset = -40
+popup_top_offset = -40
+popup_text = "Play the game."
+
+[node name="text" type="Label" parent="Root/UI/Buttons/Play" unique_id=895328939]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -54.0
+offset_right = 160.0
+offset_bottom = 16.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_font_sizes/font_size = 40
+text = "Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Control" parent="Root/UI/Buttons" unique_id=400985766]
+anchors_preset = 0
+offset_left = 120.0
+offset_top = -56.0
+offset_right = 320.0
+offset_bottom = -16.0
+pivot_offset = Vector2(0, 56)
+focus_previous = NodePath("../Play")
+focus_mode = 2
+script = ExtResource("4_vut6t")
+popup_top_offset = -80
+popup_text = "Configure the game here.."
+
+[node name="text" type="Label" parent="Root/UI/Buttons/Options" unique_id=102560374]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -46.0
+offset_right = 200.0
+offset_bottom = 24.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_font_sizes/font_size = 40
+text = "Options"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="gui_input" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/MenuButtons/LauncherSettings" to="." method="_on_launcher_settings_pressed"]
+[connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/MenuButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="gui_input" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_exited"]
+[connection signal="gui_input" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="gui_input" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_mouse_exited"]

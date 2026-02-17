@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dtg7btl84l2hf"]
+
+[ext_resource type="Script" uid="uid://c2u25bhu6bif3" path="res://scenes/managers/sound_manager/sound_manager.gd" id="1_12qxk"]
+[ext_resource type="AudioStream" uid="uid://b3nyept1k3bfx" path="res://sounds/hover.wav" id="2_6g708"]
+[ext_resource type="AudioStream" uid="uid://c7lwvapr782t3" path="res://sounds/decide.wav" id="3_3dcon"]
+
+[node name="SoundManager" type="Node" unique_id=2048127696]
+process_mode = 3
+script = ExtResource("1_12qxk")
+
+[node name="decide" type="AudioStreamPlayer2D" parent="." unique_id=775620235]
+stream = ExtResource("3_3dcon")
+volume_db = 5.0
+
+[node name="hover" type="AudioStreamPlayer2D" parent="." unique_id=1039487458]
+stream = ExtResource("2_6g708")
+volume_db = 4.35

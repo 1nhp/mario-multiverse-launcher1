@@ -1,0 +1,75 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Mario Multiverse Launcher"
+config/description="An Fanmade, launcher for fan-game Mario Multiverse! (W.I.)"
+config/version="1.0"
+run/main_scene="uid://cntno330yx08l"
+config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
+config/icon="uid://cqn18sem7ycfl"
+
+[autoload]
+
+BgmManager="*uid://esna7i3l4uok"
+SoundManager="*uid://dtg7btl84l2hf"
+object="*uid://dcnnln8v4vqdk"
+Debug="*uid://dftdnwvwhlabr"
+CircleTransition="*uid://c62e6iwwlynvb"
+Tray="*uid://fjn6t3qck7p1"
+Globals="*uid://cdjwcr8670tlj"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
+
+[gui]
+
+common/show_focus_state_on_pointer_event=2
+
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194319,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+reload_scene={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":82,"key_label":0,"unicode":114,"location":0,"echo":false,"script":null)
+]
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/default_filters/anisotropic_filtering_level=0
+anti_aliasing/quality/use_debanding=true
+lightmapping/lightmap_gi/use_bicubic_filter=false
+environment/volumetric_fog/use_filter=0
+textures/basis_universal/rdo_dict_size=64
+textures/basis_universal/zstd_supercompression=false
+textures/basis_universal/zstd_supercompression_level=0
