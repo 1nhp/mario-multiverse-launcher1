@@ -1,0 +1,348 @@
+[gd_scene format=3 uid="uid://cwji5kfb0a333"]
+
+[ext_resource type="Script" uid="uid://cl25j0osh1lw" path="res://scenes/objects/window/window.gd" id="1_t8vlu"]
+[ext_resource type="Texture2D" uid="uid://cs5r7ijn2uir4" path="res://sprites/window3.png" id="2_c2hsh"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="3_625uq"]
+[ext_resource type="Script" path="res://scripts/label_button.gd" id="3_uustq"]
+
+[sub_resource type="Animation" id="Animation_w4wpo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BG:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(976, 622)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BG:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(150, 51)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BG/Control:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.19607843)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dorux"]
+resource_name = "slide"
+length = 0.24188578
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BG:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2036869),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(976, 14), Vector2(976, 658)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BG:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2036869),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(150, 355), Vector2(150, 33)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BG/Control:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.031550318, 0.19981869),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BG:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05959504),
+"transitions": PackedFloat32Array(0.8408964, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.22786342),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.39215687)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7puge"]
+_data = {
+&"RESET": SubResource("Animation_w4wpo"),
+&"slide": SubResource("Animation_dorux")
+}
+
+[node name="Window" type="CanvasLayer" unique_id=1702857631]
+process_mode = 3
+layer = 4
+script = ExtResource("1_t8vlu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=861197367]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Control" type="Control" parent="." unique_id=1043222835]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="NinePatchRect" parent="Control" unique_id=1405160380]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.93100005
+anchor_bottom = 0.91400003
+offset_left = 150.0
+offset_top = 51.0
+offset_right = -65.68005
+offset_bottom = 14.919983
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(488, 280)
+mouse_behavior_recursive = 2
+texture = ExtResource("2_c2hsh")
+patch_margin_left = 7
+patch_margin_top = 7
+patch_margin_right = 7
+patch_margin_bottom = 7
+
+[node name="Control" type="Control" parent="Control/BG" unique_id=2077829661]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="message" type="Label" parent="Control/BG/Control" unique_id=168959647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.0
+offset_top = -226.0
+offset_right = 453.0
+offset_bottom = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_625uq")
+theme_override_font_sizes/font_size = 32
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Buttons" type="Control" parent="Control/BG/Control" unique_id=96927085]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -5.0
+offset_right = 10.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Cancel" type="Control" parent="Control/BG/Control/Buttons" unique_id=516528772]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -112.0
+offset_right = 24.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(140, 0)
+script = ExtResource("3_uustq")
+popup_right_offset = -130
+popup_top_offset = 70
+icon_top_offset = -0.1
+popup_size = Vector2(272, 32)
+show_popup = false
+popup_text = "--QUIT-- newlineBye bye..."
+
+[node name="text" type="Label" parent="Control/BG/Control/Buttons/Cancel" unique_id=1919986485]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -35.0
+offset_right = 92.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_625uq")
+theme_override_font_sizes/font_size = 40
+text = "Cancel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OK" type="Control" parent="Control/BG/Control/Buttons" unique_id=937910390]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 56.0
+offset_top = -112.0
+offset_right = 136.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-52, 0)
+script = ExtResource("3_uustq")
+popup_right_offset = -130
+popup_top_offset = 70
+icon_right_offset = 120
+icon_top_offset = -0.1
+popup_size = Vector2(272, 32)
+show_popup = false
+popup_text = "--QUIT-- newlineBye bye..."
+
+[node name="text" type="Label" parent="Control/BG/Control/Buttons/OK" unique_id=1327856964]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = -35.0
+offset_right = 92.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_625uq")
+theme_override_font_sizes/font_size = 40
+text = "OK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1797489500]
+libraries/ = SubResource("AnimationLibrary_7puge")
+
+[connection signal="gui_input" from="Control/BG/Control/Buttons/Cancel" to="Control/BG/Control/Buttons/Cancel" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Control/BG/Control/Buttons/Cancel" to="Control/BG/Control/Buttons/Cancel" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BG/Control/Buttons/Cancel" to="Control/BG/Control/Buttons/Cancel" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/BG/Control/Buttons/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="gui_input" from="Control/BG/Control/Buttons/OK" to="Control/BG/Control/Buttons/OK" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Control/BG/Control/Buttons/OK" to="Control/BG/Control/Buttons/OK" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/BG/Control/Buttons/OK" to="Control/BG/Control/Buttons/OK" method="_on_mouse_exited"]
+[connection signal="pressed" from="Control/BG/Control/Buttons/OK" to="." method="_on_ok_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

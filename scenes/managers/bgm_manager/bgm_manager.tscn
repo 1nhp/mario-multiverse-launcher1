@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://c88aghcogn881" path="res://music/bgm_settings.ogg" id="4_gpka6"]
 
 [node name="BgmManager" type="Node2D" unique_id=681383909]
+process_mode = 3
 script = ExtResource("1_s8d6l")
 
 [node name="MAIN" type="AudioStreamPlayer" parent="." unique_id=857406342]

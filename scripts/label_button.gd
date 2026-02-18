@@ -7,6 +7,9 @@ signal pressed
 @export var popup_top_offset: int
 @export var icon_right_offset: int
 @export var icon_top_offset: float
+@export var popup_size: Vector2
+@export var show_popup: bool = true
+
 @export_multiline var popup_text: String
 
 var current_popup: Control
@@ -36,7 +39,7 @@ func _show() -> void:
 		icon.self_modulate.a = 0.5
 		
 		add_child(icon)
-
+	
 	# Popup
 	if current_popup:
 		current_popup.queue_free()
@@ -44,9 +47,12 @@ func _show() -> void:
 	var popup = load("res://scenes/objects/popup/popup.tscn").instantiate()
 	popup.popuptext = popup_text
 	popup.position = Vector2(popup_right_offset, popup_top_offset)
+	popup.popup_size = popup_size
 	add_child(popup)
 	current_popup = popup
-
+	
+	if show_popup == false:
+		popup.visible = false
 
 func _hide() -> void:
 	var icon = get_node("select_icon")
@@ -67,7 +73,8 @@ func _gui_input(event: InputEvent) -> void:
 	):
 		SoundManager.play_sound(SoundManager.SOUNDS.decide)
 		_hide_popup()
-		get_node("select_icon").self_modulate.a = 1
+		var icon = get_node("select_icon")
+		if icon: icon.self_modulate.a = 1
 		emit_signal("pressed")
 
 
@@ -77,3 +84,7 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	_hide()
 	_hide_popup()
+
+
+func _on_gui_input(event: InputEvent) -> void:
+	pass # Replace with function body.

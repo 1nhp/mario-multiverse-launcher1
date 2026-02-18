@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://3kiovgfbgpj2" path="res://scenes/objects/popup/popup.gd" id="1_2st02"]
 [ext_resource type="Texture2D" uid="uid://dp0o8a7l7d6mj" path="res://sprites/window.png" id="1_oj7ce"]
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2_w4wpo"]
-[ext_resource type="PackedScene" uid="uid://c62e6iwwlynvb" path="res://scenes/objects/circleTransition/circleTransition.tscn" id="4_k5jvu"]
 
 [sub_resource type="Animation" id="Animation_w4wpo"]
 length = 0.001
@@ -17,12 +16,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_dorux"]
 resource_name = "fade"
-length = 0.20987393
+length = 0.19
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -30,7 +29,7 @@ tracks/0/path = NodePath("Container/BG:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.06666667, 0.11703246, 0.17351107),
+"times": PackedFloat32Array(0, 0.020651532, 0.071017325, 0.12749593),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.60784316), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 1)]
@@ -42,7 +41,7 @@ tracks/1/path = NodePath("Container/text:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.03333333, 0.08166151, 0.13406491, 0.1885059),
+"times": PackedFloat32Array(0.002333656, 0.050661832, 0.10306524, 0.15750623),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.60784316), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 1)]
@@ -55,6 +54,8 @@ _data = {
 }
 
 [node name="Popup" type="Control" unique_id=897274369]
+process_mode = 3
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,11 +64,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_2st02")
+popup_size = Vector2(272, 32)
 
 [node name="Container" type="MarginContainer" parent="." unique_id=1946073690]
 layout_mode = 1
-offset_left = -16.0
-offset_right = 208.0
+offset_right = 128.0
 offset_bottom = 32.0
 mouse_filter = 2
 
@@ -81,7 +82,8 @@ patch_margin_right = 5
 patch_margin_bottom = 5
 
 [node name="text" type="Label" parent="Container" unique_id=1110001658]
-custom_minimum_size = Vector2(32, 32)
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_w4wpo")
@@ -94,7 +96,5 @@ paragraph_separator = "newline"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1797489500]
 libraries/ = SubResource("AnimationLibrary_7puge")
-
-[node name="sd" parent="." unique_id=494365666 instance=ExtResource("4_k5jvu")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

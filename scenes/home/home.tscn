@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="4_4jjk6"]
 [ext_resource type="Texture2D" uid="uid://de1jqq6m4mn8p" path="res://sprites/menu_button.png" id="4_uqp2i"]
 [ext_resource type="Texture2D" uid="uid://dsheq11jd4gty" path="res://sprites/quit_icon.png" id="4_vest7"]
-[ext_resource type="Script" uid="uid://dr0uf7jg2p20w" path="res://scripts/label_button.gd" id="4_vut6t"]
+[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="4_vut6t"]
 [ext_resource type="Texture2D" uid="uid://ckwioup064bqt" path="res://sprites/settings_icon.png" id="5_vest7"]
 [ext_resource type="Script" uid="uid://bgkpvssux5ueh" path="res://scenes/home/logo.gd" id="7_qkv0c"]
 
@@ -62,6 +62,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 
 [node name="MenuButtons" type="Control" parent="Root/UI" unique_id=1857218372]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -76,6 +77,7 @@ focus_behavior_recursive = 2
 mouse_filter = 2
 
 [node name="LauncherSettings" type="Control" parent="Root/UI/MenuButtons" unique_id=82761725]
+custom_minimum_size = Vector2(64, 64)
 anchors_preset = 0
 offset_left = -105.0
 offset_top = 12.0
@@ -83,8 +85,9 @@ offset_right = -40.0
 offset_bottom = 76.0
 pivot_offset = Vector2(16, 16)
 script = ExtResource("4_vut6t")
-popup_right_offset = -130
+popup_right_offset = -250
 popup_top_offset = 70
+popup_size = Vector2(320, 32)
 popup_text = "--SETTINGS--newlineChange launcher settings here!"
 
 [node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/LauncherSettings" unique_id=1175654934]
@@ -126,6 +129,8 @@ pivot_offset = Vector2(16, 16)
 script = ExtResource("4_vut6t")
 popup_right_offset = -130
 popup_top_offset = 70
+icon_right_offset = 90
+popup_size = Vector2(272, 32)
 popup_text = "--QUIT-- newlineBye bye..."
 
 [node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/Quit" unique_id=1565647404]
@@ -200,8 +205,8 @@ pivot_offset = Vector2(0, 56)
 focus_next = NodePath("../Play")
 focus_mode = 2
 script = ExtResource("4_vut6t")
-popup_right_offset = -10
 popup_top_offset = -40
+popup_size = Vector2(170, 32)
 popup_text = "Create a level!"
 
 [node name="text" type="Label" parent="Root/UI/Buttons/Create" unique_id=1068602820]
@@ -230,8 +235,9 @@ focus_next = NodePath("../Options")
 focus_previous = NodePath("../Create")
 focus_mode = 2
 script = ExtResource("4_vut6t")
-popup_right_offset = -40
+popup_right_offset = -20
 popup_top_offset = -40
+popup_size = Vector2(170, 32)
 popup_text = "Play the game."
 
 [node name="text" type="Label" parent="Root/UI/Buttons/Play" unique_id=895328939]
@@ -260,7 +266,11 @@ pivot_offset = Vector2(0, 56)
 focus_previous = NodePath("../Play")
 focus_mode = 2
 script = ExtResource("4_vut6t")
-popup_top_offset = -80
+popup_right_offset = -60
+popup_top_offset = -40
+icon_right_offset = 230
+icon_top_offset = 0.5
+popup_size = Vector2(300, 32)
 popup_text = "Configure the game here.."
 
 [node name="text" type="Label" parent="Root/UI/Buttons/Options" unique_id=102560374]

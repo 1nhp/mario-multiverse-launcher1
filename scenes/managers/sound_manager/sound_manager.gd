@@ -1,6 +1,6 @@
 extends Node
 
-enum SOUNDS { decide, hover }
+enum SOUNDS { decide, hover, correct, wrong, destroy }
 
 var current_sound: AudioStreamPlayer2D = null
 

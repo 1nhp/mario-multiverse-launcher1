@@ -1,0 +1,24 @@
+[gd_resource type="Theme" format=3 uid="uid://bo4o85n6x5w0g"]
+
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="1_gmo65"]
+[ext_resource type="Texture2D" uid="uid://dp0o8a7l7d6mj" path="res://sprites/window.png" id="2_81jen"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cn38x"]
+texture = ExtResource("2_81jen")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscfh"]
+texture = ExtResource("2_81jen")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+modulate_color = Color(0, 0, 0, 0.40784314)
+
+[resource]
+TextEdit/fonts/font = ExtResource("1_gmo65")
+TextEdit/styles/focus = SubResource("StyleBoxTexture_cn38x")
+TextEdit/styles/normal = SubResource("StyleBoxTexture_uscfh")
