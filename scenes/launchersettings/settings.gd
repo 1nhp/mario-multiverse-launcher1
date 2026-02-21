@@ -15,7 +15,7 @@ func _update_dir_text():
 
 func _on_quit_pressed() -> void:
 	BgmManager.stop_bgm()
-	CircleTransition.transition("home/home", false)
+	CircleTransition.transition("home/home", false, 0, Vector2(0.023, 0.93))
 
 func _on_game_directory_pressed() -> void:
 	var picker = FolderPicker.new()

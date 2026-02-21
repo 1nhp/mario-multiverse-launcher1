@@ -8,7 +8,7 @@ signal window_ok_clicked
 
 func _ready() -> void:
 	$AnimationPlayer.play("slide")
-	if $Control/BG/Control/Cacnel:
+	if $Control/BG/Control/Buttons/Cancel:
 		$Control/BG/Control/Buttons/Cancel.grab_focus()
 	else:
 		$Control/BG/Control/Buttons/OK.grab_focus()

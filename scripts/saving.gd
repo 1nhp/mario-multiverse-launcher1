@@ -47,5 +47,4 @@ func reset_data():
 	Globals.rpc_bridge_path = ""
 	Globals.wine_prefix_name = ""
 	
-	# Save empty data if you want a fresh save
 	save_data()

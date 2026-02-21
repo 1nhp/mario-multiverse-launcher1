@@ -1,12 +1,9 @@
 [gd_scene format=3 uid="uid://cntno330yx08l"]
 
 [ext_resource type="Script" uid="uid://dp5ltjxbwp7s8" path="res://scenes/home/home.gd" id="1_5q1ba"]
-[ext_resource type="Texture2D" uid="uid://ojhmb0pcrish" path="res://sprites/logo.png" id="2_ng36q"]
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="4_4jjk6"]
-[ext_resource type="Texture2D" uid="uid://de1jqq6m4mn8p" path="res://sprites/menu_button.png" id="4_uqp2i"]
-[ext_resource type="Texture2D" uid="uid://dsheq11jd4gty" path="res://sprites/quit_icon.png" id="4_vest7"]
 [ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="4_vut6t"]
-[ext_resource type="Texture2D" uid="uid://ckwioup064bqt" path="res://sprites/settings_icon.png" id="5_vest7"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="5_qkv0c"]
 [ext_resource type="Script" uid="uid://bgkpvssux5ueh" path="res://scenes/home/logo.gd" id="7_qkv0c"]
 
 [sub_resource type="Gradient" id="Gradient_5q1ba"]
@@ -19,6 +16,30 @@ width = 256
 height = 256
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vest7"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(12, 87, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqp2i"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(11, 106, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ce1l6"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(12, 87, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jjk6"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(0, 106, 10, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkv0c"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(0, 0, 206, 86)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bfbb"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(206, 0, 205, 99)
 
 [node name="Home" type="CanvasLayer" unique_id=473513821]
 script = ExtResource("1_5q1ba")
@@ -88,7 +109,7 @@ script = ExtResource("4_vut6t")
 popup_right_offset = -250
 popup_top_offset = 70
 popup_size = Vector2(320, 32)
-popup_text = "--SETTINGS--newlineChange launcher settings here!"
+popup_text = "--LAUNCHER SETTINGS--newlineChange launcher settings here!"
 
 [node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/LauncherSettings" unique_id=1175654934]
 layout_mode = 1
@@ -97,7 +118,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_uqp2i")
+texture = SubResource("AtlasTexture_vest7")
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -116,7 +137,7 @@ offset_right = 25.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_vest7")
+texture = SubResource("AtlasTexture_uqp2i")
 stretch_mode = 4
 
 [node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=1426720611]
@@ -131,7 +152,7 @@ popup_right_offset = -130
 popup_top_offset = 70
 icon_right_offset = 90
 popup_size = Vector2(272, 32)
-popup_text = "--QUIT-- newlineBye bye..."
+popup_text = "--QUIT-- newlineSee you later!"
 
 [node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/Quit" unique_id=1565647404]
 layout_mode = 1
@@ -140,7 +161,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_uqp2i")
+texture = SubResource("AtlasTexture_ce1l6")
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
@@ -159,8 +180,36 @@ offset_right = 20.0
 offset_bottom = 24.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_vest7")
+texture = SubResource("AtlasTexture_4jjk6")
 stretch_mode = 4
+
+[node name="BR" type="Control" parent="Root/UI" unique_id=2106258266]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="version_text" type="Label" parent="Root/UI/BR" unique_id=796003834]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -46.0
+offset_right = -36.0
+offset_bottom = 24.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.74558026, 0.7455802, 0.7455802, 1)
+theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_font_sizes/font_size = 20
+text = "Launcher version:"
+vertical_alignment = 1
 
 [node name="TOP" type="Control" parent="Root/UI" unique_id=2045733807]
 layout_mode = 1
@@ -173,10 +222,19 @@ offset_bottom = 40.0
 grow_horizontal = 2
 mouse_filter = 2
 
-[node name="Logo" type="Sprite2D" parent="Root/UI/TOP" unique_id=1698766778]
+[node name="Beta Logo" type="Sprite2D" parent="Root/UI/TOP" unique_id=1698766778]
 texture_filter = 1
-position = Vector2(0, 128)
-texture = ExtResource("2_ng36q")
+position = Vector2(1.9073486e-05, 144)
+scale = Vector2(2.8809524, 2.8809524)
+texture = SubResource("AtlasTexture_qkv0c")
+region_rect = Rect2(0, 0, 205, 84)
+script = ExtResource("7_qkv0c")
+
+[node name="Demo Logo" type="Sprite2D" parent="Root/UI/TOP" unique_id=2046587852]
+visible = false
+position = Vector2(-2, 163)
+scale = Vector2(2.881, 2.881)
+texture = SubResource("AtlasTexture_0bfbb")
 script = ExtResource("7_qkv0c")
 
 [node name="Buttons" type="Control" parent="Root/UI" unique_id=20629747]
@@ -260,18 +318,18 @@ vertical_alignment = 1
 anchors_preset = 0
 offset_left = 120.0
 offset_top = -56.0
-offset_right = 320.0
+offset_right = 510.0
 offset_bottom = -16.0
 pivot_offset = Vector2(0, 56)
 focus_previous = NodePath("../Play")
 focus_mode = 2
 script = ExtResource("4_vut6t")
-popup_right_offset = -60
+popup_right_offset = -40
 popup_top_offset = -40
-icon_right_offset = 230
+icon_right_offset = 360
 icon_top_offset = 0.5
-popup_size = Vector2(300, 32)
-popup_text = "Configure the game here.."
+popup_size = Vector2(400, 32)
+popup_text = "Configure, in-game settings here.."
 
 [node name="text" type="Label" parent="Root/UI/Buttons/Options" unique_id=102560374]
 layout_mode = 1
@@ -284,7 +342,7 @@ offset_bottom = 24.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_4jjk6")
 theme_override_font_sizes/font_size = 40
-text = "Options"
+text = "Game Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -299,6 +357,7 @@ vertical_alignment = 1
 [connection signal="gui_input" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/Buttons/Create" to="." method="_on_create_pressed"]
 [connection signal="gui_input" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Buttons/Play" to="Root/UI/Buttons/Play" method="_on_mouse_exited"]
@@ -306,3 +365,4 @@ vertical_alignment = 1
 [connection signal="gui_input" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Buttons/Options" to="Root/UI/Buttons/Options" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/Buttons/Options" to="." method="_on_options_pressed"]

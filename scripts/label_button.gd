@@ -27,7 +27,18 @@ func _show() -> void:
 	if not has_node("select_icon"):
 		var icon := TextureRect.new()
 		icon.name = "select_icon"
-		icon.texture = load("res://sprites/goomb_sel_icon.png")
+
+		var atlas_image: Texture2D = load("res://sprites/UI.png")
+
+		# Create AtlasTexture
+		var atlas_texture := AtlasTexture.new()
+		atlas_texture.atlas = atlas_image
+		
+		# Define the region (CHANGE THESE VALUES)
+		atlas_texture.region = Rect2(28, 106, 8, 8)
+
+		icon.texture = atlas_texture
+
 		icon.custom_minimum_size = Vector2(24, 24)
 		icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED

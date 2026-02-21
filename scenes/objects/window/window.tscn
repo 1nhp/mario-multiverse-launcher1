@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://cwji5kfb0a333"]
 
 [ext_resource type="Script" uid="uid://cl25j0osh1lw" path="res://scenes/objects/window/window.gd" id="1_t8vlu"]
-[ext_resource type="Texture2D" uid="uid://cs5r7ijn2uir4" path="res://sprites/window3.png" id="2_c2hsh"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_vnhg2"]
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="3_625uq"]
-[ext_resource type="Script" path="res://scripts/label_button.gd" id="3_uustq"]
+[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="3_uustq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uustq"]
+atlas = ExtResource("2_vnhg2")
+region = Rect2(31, 87, 19, 19)
 
 [sub_resource type="Animation" id="Animation_w4wpo"]
 length = 0.001
@@ -203,7 +207,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(488, 280)
 mouse_behavior_recursive = 2
-texture = ExtResource("2_c2hsh")
+texture = SubResource("AtlasTexture_uustq")
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7

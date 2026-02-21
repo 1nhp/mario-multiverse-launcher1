@@ -1,17 +1,25 @@
 [gd_resource type="Theme" format=3 uid="uid://bo4o85n6x5w0g"]
 
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="1_gmo65"]
-[ext_resource type="Texture2D" uid="uid://dp0o8a7l7d6mj" path="res://sprites/window.png" id="2_81jen"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_ibety"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a31go"]
+atlas = ExtResource("2_ibety")
+region = Rect2(0, 86, 11, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cn38x"]
-texture = ExtResource("2_81jen")
+texture = SubResource("AtlasTexture_a31go")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gmo65"]
+atlas = ExtResource("2_ibety")
+region = Rect2(0, 86, 11, 11)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscfh"]
-texture = ExtResource("2_81jen")
+texture = SubResource("AtlasTexture_gmo65")
 texture_margin_left = 5.0
 texture_margin_top = 5.0
 texture_margin_right = 5.0

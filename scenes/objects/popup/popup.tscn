@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cetvjwkxccrem"]
 
 [ext_resource type="Script" uid="uid://3kiovgfbgpj2" path="res://scenes/objects/popup/popup.gd" id="1_2st02"]
-[ext_resource type="Texture2D" uid="uid://dp0o8a7l7d6mj" path="res://sprites/window.png" id="1_oj7ce"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_2st02"]
 [ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2_w4wpo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5jvu"]
+atlas = ExtResource("2_2st02")
+region = Rect2(0, 86, 11, 11)
 
 [sub_resource type="Animation" id="Animation_w4wpo"]
 length = 0.001
@@ -74,7 +78,7 @@ mouse_filter = 2
 
 [node name="BG" type="NinePatchRect" parent="Container" unique_id=316636326]
 layout_mode = 2
-texture = ExtResource("1_oj7ce")
+texture = SubResource("AtlasTexture_k5jvu")
 region_rect = Rect2(0, -0.37486267, 11, 11.374863)
 patch_margin_left = 5
 patch_margin_top = 5
