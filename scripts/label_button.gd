@@ -91,11 +91,9 @@ func _gui_input(event: InputEvent) -> void:
 
 func _on_mouse_entered() -> void:
 	_show()
-	
 func _on_mouse_exited() -> void:
 	_hide()
 	_hide_popup()
-
 
 func _on_gui_input(event: InputEvent) -> void:
 	pass # Replace with function body.

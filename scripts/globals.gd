@@ -5,6 +5,7 @@ var wine_prefix_name = ""
 
 var os = OS.get_name()
 var version = ""
+var launcher_path = OS.get_executable_path().get_base_dir()
 
 func _ready() -> void:
 	var file = FileAccess.open("res://version.json", FileAccess.READ)

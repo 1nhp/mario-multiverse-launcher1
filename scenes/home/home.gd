@@ -87,12 +87,17 @@ func _start_transition():
 		CircleTransition.transition("home/home", true, 2, Vector2(0.49, 0.9))
 		await get_tree().create_timer(1).timeout	
 
-func _on_window_ok_pressed(): $Root/UI/Buttons/Play.grab_focus()	
-
+func _on_window_ok_pressed(): 
+	$Root/UI/Buttons.grab_focus()
+	
 # Go to launcher settings scene if launcher settings button is pressed
 func _on_launcher_settings_pressed() -> void:
 	BgmManager.stop_bgm()
-	CircleTransition.transition("launchersettings/launchersettings", false, 0, Vector2(0.925, 0.06))
+	CircleTransition.transition("launchersettings/launchersettings", false, 0, Vector2(0.865, 0.06))
 
 func _on_options_pressed() -> void:
 	_launch_game("/MarioConfig.exe")
+
+func _on_check_launcher_version_pressed() -> void:
+	await Updatechecker.check_launcher_version()
+	$Root/UI/Window.window_ok_clicked.connect(_on_window_ok_pressed)

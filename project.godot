@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Mario Multiverse Launcher"
 config/description="An Fanmade, launcher for fan-game Mario Multiverse! (W.I.P)"
-config/version="1.1"
+config/version="1.0 R4 Indev"
 run/main_scene="uid://cntno330yx08l"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -26,8 +26,9 @@ SoundManager="*uid://dtg7btl84l2hf"
 CircleTransition="*uid://c62e6iwwlynvb"
 Debug="*res://scripts/debug.gd"
 Globals="*res://scripts/globals.gd"
-object="*res://scripts/object.gd"
 Saving="*res://scripts/saving.gd"
+Updatechecker="*uid://c7otofjghtcek"
+object="*uid://br0838wasw867"
 
 [display]
 
@@ -36,6 +37,12 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
+
+[global_group]
+
+Window=""
+message=""
+WindowUpdating=""
 
 [gui]
 

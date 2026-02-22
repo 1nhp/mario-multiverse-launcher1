@@ -1,6 +1,6 @@
 extends Node2D
 
-enum BGM { MAIN, MAIN_ALT, SETTINGS }
+enum BGM { MAIN, MAIN_ALT, SETTINGS, UPDATE }
 
 var current_bgm: AudioStreamPlayer = null
 

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dk8sepiijehha" path="res://scenes/managers/bgm_manager/bgm_manager.gd" id="1_s8d6l"]
 [ext_resource type="AudioStream" uid="uid://1mwcpbyu40dh" path="res://music/bgm_title.ogg" id="3_gkc4e"]
 [ext_resource type="AudioStream" uid="uid://c88aghcogn881" path="res://music/bgm_settings.ogg" id="4_gpka6"]
+[ext_resource type="AudioStream" uid="uid://cfj342np7p1il" path="res://music/bgm_update.ogg" id="5_ff0ld"]
 
 [node name="BgmManager" type="Node2D" unique_id=681383909]
 process_mode = 3
@@ -19,4 +20,9 @@ parameters/looping = true
 
 [node name="SETTINGS" type="AudioStreamPlayer" parent="." unique_id=1065365263]
 stream = ExtResource("4_gpka6")
+parameters/looping = true
+
+[node name="UPDATE" type="AudioStreamPlayer" parent="." unique_id=1582097066]
+stream = ExtResource("5_ff0ld")
+volume_db = -30.0
 parameters/looping = true

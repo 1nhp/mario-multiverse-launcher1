@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://d3s2jym0lhqru" path="res://sounds/correct.wav" id="4_g4f3q"]
 [ext_resource type="AudioStream" uid="uid://cqd8th385mjda" path="res://sounds/wrong.wav" id="5_gylff"]
 [ext_resource type="AudioStream" uid="uid://dbodqjb130t3g" path="res://sounds/destroy.wav" id="6_gylff"]
+[ext_resource type="AudioStream" uid="uid://bqfkur1ttiurj" path="res://sounds/update_complete.wav" id="7_a2xkf"]
 
 [node name="SoundManager" type="Node" unique_id=2048127696]
 process_mode = 3
@@ -28,4 +29,8 @@ volume_db = 12.0
 
 [node name="destroy" type="AudioStreamPlayer2D" parent="." unique_id=1464918566]
 stream = ExtResource("6_gylff")
+volume_db = 12.0
+
+[node name="update_complete" type="AudioStreamPlayer2D" parent="." unique_id=1722810361]
+stream = ExtResource("7_a2xkf")
 volume_db = 12.0

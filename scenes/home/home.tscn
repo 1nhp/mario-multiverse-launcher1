@@ -29,6 +29,10 @@ region = Rect2(11, 106, 16, 16)
 atlas = ExtResource("5_qkv0c")
 region = Rect2(12, 87, 18, 18)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3yd1"]
+atlas = ExtResource("5_qkv0c")
+region = Rect2(0, 123, 26, 25)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jjk6"]
 atlas = ExtResource("5_qkv0c")
 region = Rect2(0, 106, 10, 14)
@@ -100,9 +104,9 @@ mouse_filter = 2
 [node name="LauncherSettings" type="Control" parent="Root/UI/MenuButtons" unique_id=82761725]
 custom_minimum_size = Vector2(64, 64)
 anchors_preset = 0
-offset_left = -105.0
+offset_left = -177.0
 offset_top = 12.0
-offset_right = -40.0
+offset_right = -112.0
 offset_bottom = 76.0
 pivot_offset = Vector2(16, 16)
 script = ExtResource("4_vut6t")
@@ -140,6 +144,49 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_uqp2i")
 stretch_mode = 4
 
+[node name="CheckLauncherVersion" type="Control" parent="Root/UI/MenuButtons" unique_id=1218866762]
+anchors_preset = 0
+offset_left = -105.0
+offset_top = 12.0
+offset_right = -40.0
+offset_bottom = 76.0
+pivot_offset = Vector2(16, 16)
+script = ExtResource("4_vut6t")
+popup_right_offset = -330
+popup_top_offset = 70
+icon_right_offset = 10
+popup_size = Vector2(400, 32)
+popup_text = "--CHECK LAUNCHER VERSION-- newlineCheck for the launcher version then update if needed"
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/CheckLauncherVersion" unique_id=415491636]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ce1l6")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
+[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/CheckLauncherVersion/BG" unique_id=483985887]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -24.0
+offset_right = 27.5
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_n3yd1")
+stretch_mode = 4
+
 [node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=1426720611]
 anchors_preset = 0
 offset_left = -33.0
@@ -148,7 +195,7 @@ offset_right = 32.0
 offset_bottom = 76.0
 pivot_offset = Vector2(16, 16)
 script = ExtResource("4_vut6t")
-popup_right_offset = -130
+popup_right_offset = -210
 popup_top_offset = 70
 icon_right_offset = 90
 popup_size = Vector2(272, 32)
@@ -350,6 +397,10 @@ vertical_alignment = 1
 [connection signal="mouse_entered" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_exited"]
 [connection signal="pressed" from="Root/UI/MenuButtons/LauncherSettings" to="." method="_on_launcher_settings_pressed"]
+[connection signal="gui_input" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/MenuButtons/CheckLauncherVersion" to="." method="_on_check_launcher_version_pressed"]
 [connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]
