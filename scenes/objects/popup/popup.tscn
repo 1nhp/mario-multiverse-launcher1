@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cetvjwkxccrem"]
 
-[ext_resource type="Script" uid="uid://3kiovgfbgpj2" path="res://scenes/objects/popup/popup.gd" id="1_2st02"]
-[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_2st02"]
-[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2_w4wpo"]
+[ext_resource type="Script" uid="uid://3kiovgfbgpj2" path="res://scenes/objects/popup/popup.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5jvu"]
-atlas = ExtResource("2_2st02")
+atlas = ExtResource("2")
 region = Rect2(0, 86, 11, 11)
 
 [sub_resource type="Animation" id="Animation_w4wpo"]
@@ -67,7 +67,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-script = ExtResource("1_2st02")
+script = ExtResource("1")
 popup_size = Vector2(272, 32)
 
 [node name="Container" type="MarginContainer" parent="." unique_id=1946073690]
@@ -77,20 +77,22 @@ offset_bottom = 32.0
 mouse_filter = 2
 
 [node name="BG" type="NinePatchRect" parent="Container" unique_id=316636326]
+texture_filter = 3
+texture_repeat = 1
 layout_mode = 2
 texture = SubResource("AtlasTexture_k5jvu")
-region_rect = Rect2(0, -0.37486267, 11, 11.374863)
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
+region_rect = Rect2(0, 0, 11, 11)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
 
 [node name="text" type="Label" parent="Container" unique_id=1110001658]
 modulate = Color(1, 1, 1, 0)
 custom_minimum_size = Vector2(24, 24)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_w4wpo")
+theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 18
 text = "Hello World"
 horizontal_alignment = 1
@@ -100,5 +102,6 @@ paragraph_separator = "newline"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1797489500]
 libraries/ = SubResource("AnimationLibrary_7puge")
+speed_scale = 1.05
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

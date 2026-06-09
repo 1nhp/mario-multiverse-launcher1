@@ -1,14 +1,18 @@
-[gd_scene format=3 uid="uid://cntno330yx08l"]
+[gd_scene format=4 uid="uid://cntno330yx08l"]
 
-[ext_resource type="Script" uid="uid://dp5ltjxbwp7s8" path="res://scenes/home/home.gd" id="1_5q1ba"]
-[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="4_4jjk6"]
-[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="4_vut6t"]
-[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="5_qkv0c"]
-[ext_resource type="Script" uid="uid://bgkpvssux5ueh" path="res://scenes/home/logo.gd" id="7_qkv0c"]
+[ext_resource type="Script" uid="uid://dp5ltjxbwp7s8" path="res://scenes/home/home.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxq7iklic1lfy" path="res://sprites/update_mario.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://chdeyucc66j6o" path="res://sprites/update_objects.png" id="3"]
+[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="5"]
+[ext_resource type="Theme" uid="uid://bo4o85n6x5w0g" path="res://data/new_theme.tres" id="6"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="7"]
+[ext_resource type="Script" uid="uid://bgkpvssux5ueh" path="res://scenes/home/logo.gd" id="8"]
 
 [sub_resource type="Gradient" id="Gradient_5q1ba"]
 interpolation_mode = 2
-colors = PackedColorArray(0.12108789, 0.38483936, 0.55794305, 1, 1.6845763e-07, 0.16847637, 0.25975224, 1)
+offsets = PackedFloat32Array(0, 0.9563953)
+colors = PackedColorArray(0.12108789, 0.38483936, 0.55794305, 1, 1.643184e-07, 0.16433667, 0.25336975, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ng36q"]
 gradient = SubResource("Gradient_5q1ba")
@@ -17,36 +21,272 @@ height = 256
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_10xru"]
+atlas = ExtResource("2")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spdp0"]
+atlas = ExtResource("2")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3enq"]
+atlas = ExtResource("2")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mepa"]
+atlas = ExtResource("2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orswa"]
+atlas = ExtResource("2")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg871"]
+atlas = ExtResource("2")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkv0c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10xru")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spdp0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3enq")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mepa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orswa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg871")
+}],
+"loop": true,
+"name": &"running",
+"speed": 15.0
+}]
+
+[sub_resource type="Animation" id="Animation_qkv0c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(34, 416)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [416.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [34.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.1875005, 4.1875005)]
+}
+
+[sub_resource type="Animation" id="Animation_0bfbb"]
+resource_name = "mario_land"
+length = 1.5666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [416.0, 542.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"jumping", &"idle"]
+}
+
+[sub_resource type="Animation" id="Animation_ce1l6"]
+resource_name = "mario_running_loop"
+length = 9.166667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [542.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.1333334, 3.9666667, 6.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"running", &"idle", &"running", &"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.1, 3.9666667, 6.6666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [34.0, 1400.0, 1400.0, 34.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.9, 3.9666667, 6.433333, 6.6666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(4.1875005, 4.1875005), Vector2(4.1875005, 4.1875005), Vector2(-4.188, 4.188), Vector2(-4.188, 4.188), Vector2(4.188, 4.188)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ce1l6"]
+_data = {
+&"RESET": SubResource("Animation_qkv0c"),
+&"mario_land": SubResource("Animation_0bfbb"),
+&"mario_running_loop": SubResource("Animation_ce1l6")
+}
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0bfbb"]
+texture = ExtResource("3")
+0:2/0 = 0
+0:2/0/script = null
+
+[sub_resource type="TileSet" id="TileSet_ce1l6"]
+sources/0 = SubResource("TileSetAtlasSource_0bfbb")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vest7"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(12, 87, 18, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqp2i"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(11, 106, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ce1l6"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(12, 87, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n3yd1"]
-atlas = ExtResource("5_qkv0c")
-region = Rect2(0, 123, 26, 25)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_4jjk6"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(0, 106, 10, 14)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4rcvl"]
+atlas = ExtResource("5")
+region = Rect2(40, 96, 1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ut8jx"]
+texture = SubResource("AtlasTexture_4rcvl")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0, 0, 0, 0.60784316)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut8jx"]
+atlas = ExtResource("5")
+region = Rect2(77, 88, 14, 15)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qkv0c"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(0, 0, 206, 86)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0bfbb"]
-atlas = ExtResource("5_qkv0c")
+atlas = ExtResource("5")
 region = Rect2(206, 0, 205, 99)
 
 [node name="Home" type="CanvasLayer" unique_id=473513821]
-script = ExtResource("1_5q1ba")
+script = ExtResource("1")
 
 [node name="Root" type="Control" parent="." unique_id=1804042524]
 layout_mode = 3
@@ -58,6 +298,17 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Root" unique_id=191091707]
+z_index = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 576.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4862745)
 
 [node name="TextureRect" type="TextureRect" parent="Root" unique_id=478944019]
 texture_filter = 2
@@ -74,8 +325,38 @@ mouse_filter = 2
 texture = SubResource("GradientTexture2D_ng36q")
 flip_v = true
 
-[node name="UI" type="Control" parent="Root" unique_id=783562485]
+[node name="BG" type="Control" parent="Root" unique_id=992551936]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -720.0
+offset_right = 640.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Mario" type="AnimatedSprite2D" parent="Root/BG" unique_id=1700209003]
 z_index = 1
+position = Vector2(34, 416)
+scale = Vector2(4.1875005, 4.1875005)
+sprite_frames = SubResource("SpriteFrames_qkv0c")
+animation = &"idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Root/BG/Mario" unique_id=1031238197]
+libraries/ = SubResource("AnimationLibrary_ce1l6")
+
+[node name="Ground" type="TileMapLayer" parent="Root/BG" unique_id=1838516908]
+z_index = 1
+position = Vector2(0, -1152)
+scale = Vector2(3, 3)
+tile_map_data = PackedByteArray("AAAAACQAAAAAAAIAAAAAACUAAAAAAAIAAAAAACYAAAAAAAIAAAABACQAAAAAAAIAAAABACUAAAAAAAIAAAABACYAAAAAAAIAAAACACQAAAAAAAIAAAACACUAAAAAAAIAAAACACYAAAAAAAIAAAADACQAAAAAAAIAAAADACUAAAAAAAIAAAADACYAAAAAAAIAAAAEACQAAAAAAAIAAAAEACUAAAAAAAIAAAAEACYAAAAAAAIAAAAFACQAAAAAAAIAAAAFACUAAAAAAAIAAAAFACYAAAAAAAIAAAAGACQAAAAAAAIAAAAGACUAAAAAAAIAAAAGACYAAAAAAAIAAAAHACQAAAAAAAIAAAAHACUAAAAAAAIAAAAHACYAAAAAAAIAAAAIACQAAAAAAAIAAAAIACUAAAAAAAIAAAAIACYAAAAAAAIAAAAJACQAAAAAAAIAAAAJACUAAAAAAAIAAAAJACYAAAAAAAIAAAAKACQAAAAAAAIAAAAKACUAAAAAAAIAAAAKACYAAAAAAAIAAAALACQAAAAAAAIAAAALACUAAAAAAAIAAAALACYAAAAAAAIAAAAMACQAAAAAAAIAAAAMACUAAAAAAAIAAAAMACYAAAAAAAIAAAANACQAAAAAAAIAAAANACUAAAAAAAIAAAANACYAAAAAAAIAAAAOACQAAAAAAAIAAAAOACUAAAAAAAIAAAAOACYAAAAAAAIAAAAPACQAAAAAAAIAAAAPACUAAAAAAAIAAAAPACYAAAAAAAIAAAAQACQAAAAAAAIAAAAQACUAAAAAAAIAAAAQACYAAAAAAAIAAAARACQAAAAAAAIAAAARACUAAAAAAAIAAAARACYAAAAAAAIAAAASACQAAAAAAAIAAAASACUAAAAAAAIAAAASACYAAAAAAAIAAAATACQAAAAAAAIAAAATACUAAAAAAAIAAAATACYAAAAAAAIAAAAUACQAAAAAAAIAAAAUACUAAAAAAAIAAAAUACYAAAAAAAIAAAAVACQAAAAAAAIAAAAVACUAAAAAAAIAAAAVACYAAAAAAAIAAAAWACQAAAAAAAIAAAAWACUAAAAAAAIAAAAWACYAAAAAAAIAAAAXACQAAAAAAAIAAAAXACUAAAAAAAIAAAAXACYAAAAAAAIAAAAYACQAAAAAAAIAAAAYACUAAAAAAAIAAAAYACYAAAAAAAIAAAAZACQAAAAAAAIAAAAZACUAAAAAAAIAAAAZACYAAAAAAAIAAAAaACQAAAAAAAIAAAAaACUAAAAAAAIAAAAaACYAAAAAAAIAAAAbACQAAAAAAAIAAAAbACUAAAAAAAIAAAAbACYAAAAAAAIAAAAcACQAAAAAAAIAAAAcACUAAAAAAAIAAAAcACYAAAAAAAIAAAAdACQAAAAAAAIAAAAdACUAAAAAAAIAAAAdACYAAAAAAAIAAAAeACQAAAAAAAIAAAAeACUAAAAAAAIAAAAeACYAAAAAAAIAAAAfACQAAAAAAAIAAAAfACUAAAAAAAIAAAAfACYAAAAAAAIAAAAgACQAAAAAAAIAAAAgACUAAAAAAAIAAAAgACYAAAAAAAIAAAAhACQAAAAAAAIAAAAhACUAAAAAAAIAAAAhACYAAAAAAAIAAAAiACQAAAAAAAIAAAAiACUAAAAAAAIAAAAiACYAAAAAAAIAAAAjACQAAAAAAAIAAAAjACUAAAAAAAIAAAAjACYAAAAAAAIAAAAkACQAAAAAAAIAAAAkACUAAAAAAAIAAAAkACYAAAAAAAIAAAAlACQAAAAAAAIAAAAlACUAAAAAAAIAAAAlACYAAAAAAAIAAAAmACQAAAAAAAIAAAAmACUAAAAAAAIAAAAmACYAAAAAAAIAAAAnACQAAAAAAAIAAAAnACUAAAAAAAIAAAAnACYAAAAAAAIAAAAoACQAAAAAAAIAAAAoACUAAAAAAAIAAAAoACYAAAAAAAIAAAApACQAAAAAAAIAAAApACUAAAAAAAIAAAApACYAAAAAAAIAAAAqACQAAAAAAAIAAAAqACUAAAAAAAIAAAAqACYAAAAAAAIAAAArACQAAAAAAAIAAAArACUAAAAAAAIAAAArACYAAAAAAAIAAAAsACQAAAAAAAIAAAAsACUAAAAAAAIAAAAsACYAAAAAAAIAAAAtACQAAAAAAAIAAAAtACUAAAAAAAIAAAAtACYAAAAAAAIAAAAuACQAAAAAAAIAAAAuACUAAAAAAAIAAAAuACYAAAAAAAIAAAAvACQAAAAAAAIAAAAvACUAAAAAAAIAAAAvACYAAAAAAAIAAAAwACQAAAAAAAIAAAAwACUAAAAAAAIAAAAwACYAAAAAAAIAAAAxACQAAAAAAAIAAAAxACUAAAAAAAIAAAAxACYAAAAAAAIAAAAyACQAAAAAAAIAAAAyACUAAAAAAAIAAAAyACYAAAAAAAIAAAAzACQAAAAAAAIAAAAzACUAAAAAAAIAAAAzACYAAAAAAAIAAAA0ACQAAAAAAAIAAAA0ACUAAAAAAAIAAAA0ACYAAAAAAAIAAAA1ACQAAAAAAAIAAAA1ACUAAAAAAAIAAAA1ACYAAAAAAAIAAAA2ACQAAAAAAAIAAAA2ACUAAAAAAAIAAAA2ACYAAAAAAAIAAAA3ACQAAAAAAAIAAAA3ACUAAAAAAAIAAAA3ACYAAAAAAAIAAAA4ACQAAAAAAAIAAAA4ACUAAAAAAAIAAAA4ACYAAAAAAAIAAAA5ACQAAAAAAAIAAAA5ACUAAAAAAAIAAAA5ACYAAAAAAAIAAAA6ACQAAAAAAAIAAAA6ACUAAAAAAAIAAAA6ACYAAAAAAAIAAAA7ACQAAAAAAAIAAAA7ACUAAAAAAAIAAAA7ACYAAAAAAAIAAAA8ACQAAAAAAAIAAAA8ACUAAAAAAAIAAAA8ACYAAAAAAAIAAAA9ACQAAAAAAAIAAAA9ACUAAAAAAAIAAAA9ACYAAAAAAAIAAAA+ACQAAAAAAAIAAAA+ACUAAAAAAAIAAAA+ACYAAAAAAAIAAAA/ACQAAAAAAAIAAAA/ACUAAAAAAAIAAAA/ACYAAAAAAAIAAABAACQAAAAAAAIAAABAACUAAAAAAAIAAABAACYAAAAAAAIAAAD3/yQAAAAAAAIAAAD3/yUAAAAAAAIAAAD3/yYAAAAAAAIAAAD4/yQAAAAAAAIAAAD4/yUAAAAAAAIAAAD4/yYAAAAAAAIAAAD5/yQAAAAAAAIAAAD5/yUAAAAAAAIAAAD5/yYAAAAAAAIAAAD6/yQAAAAAAAIAAAD6/yUAAAAAAAIAAAD6/yYAAAAAAAIAAAD7/yQAAAAAAAIAAAD7/yUAAAAAAAIAAAD7/yYAAAAAAAIAAAD8/yQAAAAAAAIAAAD8/yUAAAAAAAIAAAD8/yYAAAAAAAIAAAD9/yQAAAAAAAIAAAD9/yUAAAAAAAIAAAD9/yYAAAAAAAIAAAD+/yQAAAAAAAIAAAD+/yUAAAAAAAIAAAD+/yYAAAAAAAIAAAD//yQAAAAAAAIAAAD//yUAAAAAAAIAAAD//yYAAAAAAAIAAADj/yQAAAAAAAIAAADj/yUAAAAAAAIAAADj/yYAAAAAAAIAAADk/yQAAAAAAAIAAADk/yUAAAAAAAIAAADk/yYAAAAAAAIAAADl/yQAAAAAAAIAAADl/yUAAAAAAAIAAADl/yYAAAAAAAIAAADm/yQAAAAAAAIAAADm/yUAAAAAAAIAAADm/yYAAAAAAAIAAADn/yQAAAAAAAIAAADn/yUAAAAAAAIAAADn/yYAAAAAAAIAAADo/yQAAAAAAAIAAADo/yUAAAAAAAIAAADo/yYAAAAAAAIAAADp/yQAAAAAAAIAAADp/yUAAAAAAAIAAADp/yYAAAAAAAIAAADq/yQAAAAAAAIAAADq/yUAAAAAAAIAAADq/yYAAAAAAAIAAADr/yQAAAAAAAIAAADr/yUAAAAAAAIAAADr/yYAAAAAAAIAAADs/yQAAAAAAAIAAADs/yUAAAAAAAIAAADs/yYAAAAAAAIAAADt/yQAAAAAAAIAAADt/yUAAAAAAAIAAADt/yYAAAAAAAIAAADu/yQAAAAAAAIAAADu/yUAAAAAAAIAAADu/yYAAAAAAAIAAADv/yQAAAAAAAIAAADv/yUAAAAAAAIAAADv/yYAAAAAAAIAAADw/yQAAAAAAAIAAADw/yUAAAAAAAIAAADw/yYAAAAAAAIAAADx/yQAAAAAAAIAAADx/yUAAAAAAAIAAADx/yYAAAAAAAIAAADy/yQAAAAAAAIAAADy/yUAAAAAAAIAAADy/yYAAAAAAAIAAADz/yQAAAAAAAIAAADz/yUAAAAAAAIAAADz/yYAAAAAAAIAAAD0/yQAAAAAAAIAAAD0/yUAAAAAAAIAAAD0/yYAAAAAAAIAAAD1/yQAAAAAAAIAAAD1/yUAAAAAAAIAAAD1/yYAAAAAAAIAAAD2/yQAAAAAAAIAAAD2/yUAAAAAAAIAAAD2/yYAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_ce1l6")
+
+[node name="UI" type="Control" parent="Root" unique_id=783562485]
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,14 +385,14 @@ mouse_filter = 2
 [node name="LauncherSettings" type="Control" parent="Root/UI/MenuButtons" unique_id=82761725]
 custom_minimum_size = Vector2(64, 64)
 anchors_preset = 0
-offset_left = -177.0
+offset_left = -133.1875
 offset_top = 12.0
-offset_right = -112.0
-offset_bottom = 76.0
+offset_right = -56.0
+offset_bottom = 88.0
 pivot_offset = Vector2(16, 16)
-script = ExtResource("4_vut6t")
-popup_right_offset = -250
-popup_top_offset = 70
+script = ExtResource("4")
+popup_right_offset = -240
+popup_top_offset = 80
 popup_size = Vector2(320, 32)
 popup_text = "--LAUNCHER SETTINGS--newlineChange launcher settings here!"
 
@@ -135,69 +416,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -23.5
-offset_top = -24.0
-offset_right = 25.0
-offset_bottom = 24.0
+offset_left = -30.3125
+offset_top = -30.0
+offset_right = 30.3125
+offset_bottom = 30.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_uqp2i")
 stretch_mode = 4
 
-[node name="CheckLauncherVersion" type="Control" parent="Root/UI/MenuButtons" unique_id=1218866762]
-anchors_preset = 0
-offset_left = -105.0
-offset_top = 12.0
-offset_right = -40.0
-offset_bottom = 76.0
-pivot_offset = Vector2(16, 16)
-script = ExtResource("4_vut6t")
-popup_right_offset = -330
-popup_top_offset = 70
-icon_right_offset = 10
-popup_size = Vector2(400, 32)
-popup_text = "--CHECK LAUNCHER VERSION-- newlineCheck for the launcher version then update if needed"
-
-[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/CheckLauncherVersion" unique_id=415491636]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_ce1l6")
-patch_margin_left = 2
-patch_margin_top = 2
-patch_margin_right = 2
-patch_margin_bottom = 2
-
-[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/CheckLauncherVersion/BG" unique_id=483985887]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -25.0
-offset_top = -24.0
-offset_right = 27.5
-offset_bottom = 24.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_n3yd1")
-stretch_mode = 4
-
 [node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=1426720611]
 anchors_preset = 0
-offset_left = -33.0
+offset_left = -45.1875
 offset_top = 12.0
 offset_right = 32.0
-offset_bottom = 76.0
+offset_bottom = 88.0
 pivot_offset = Vector2(16, 16)
-script = ExtResource("4_vut6t")
-popup_right_offset = -210
-popup_top_offset = 70
-icon_right_offset = 90
+script = ExtResource("4")
+popup_right_offset = -195
+popup_top_offset = 80
+icon_right_offset = 110
 popup_size = Vector2(272, 32)
 popup_text = "--QUIT-- newlineSee you later!"
 
@@ -221,14 +459,87 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -24.0
-offset_right = 20.0
-offset_bottom = 24.0
+offset_left = -25.59375
+offset_top = -30.71251
+offset_right = 25.59375
+offset_bottom = 30.71251
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_4jjk6")
 stretch_mode = 4
+
+[node name="PlayerPlate" type="Control" parent="Root/UI" unique_id=1535400562]
+visible = false
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 272.0
+offset_bottom = 71.0
+focus_previous = NodePath("Plate")
+focus_mode = 2
+focus_behavior_recursive = 2
+mouse_filter = 2
+
+[node name="Plate" type="Control" parent="Root/UI/PlayerPlate" unique_id=696650756]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(16, 16)
+script = ExtResource("4")
+popup_top_offset = 80
+icon_right_offset = 310
+popup_size = Vector2(320, 32)
+popup_text = "Your profile.. note: WIP"
+
+[node name="BG" type="Panel" parent="Root/UI/PlayerPlate/Plate" unique_id=1323566859]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("6")
+theme_override_styles/panel = SubResource("StyleBoxTexture_ut8jx")
+
+[node name="Icon" type="TextureRect" parent="Root/UI/PlayerPlate/Plate/BG" unique_id=1990572007]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -25.0
+offset_right = 64.0
+offset_bottom = 25.0
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ut8jx")
+stretch_mode = 4
+
+[node name="text" type="Label" parent="Root/UI/PlayerPlate/Plate/BG" unique_id=1729281313]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -19.5
+offset_bottom = 29.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 28
+text = "Player"
+vertical_alignment = 1
 
 [node name="BR" type="Control" parent="Root/UI" unique_id=2106258266]
 layout_mode = 1
@@ -253,7 +564,7 @@ offset_right = -36.0
 offset_bottom = 24.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.74558026, 0.7455802, 0.7455802, 1)
-theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_fonts/font = ExtResource("7")
 theme_override_font_sizes/font_size = 20
 text = "Launcher version:"
 vertical_alignment = 1
@@ -275,14 +586,14 @@ position = Vector2(1.9073486e-05, 144)
 scale = Vector2(2.8809524, 2.8809524)
 texture = SubResource("AtlasTexture_qkv0c")
 region_rect = Rect2(0, 0, 205, 84)
-script = ExtResource("7_qkv0c")
+script = ExtResource("8")
 
 [node name="Demo Logo" type="Sprite2D" parent="Root/UI/TOP" unique_id=2046587852]
 visible = false
 position = Vector2(-2, 163)
 scale = Vector2(2.881, 2.881)
 texture = SubResource("AtlasTexture_0bfbb")
-script = ExtResource("7_qkv0c")
+script = ExtResource("8")
 
 [node name="Buttons" type="Control" parent="Root/UI" unique_id=20629747]
 layout_mode = 1
@@ -309,7 +620,7 @@ offset_bottom = -16.0
 pivot_offset = Vector2(0, 56)
 focus_next = NodePath("../Play")
 focus_mode = 2
-script = ExtResource("4_vut6t")
+script = ExtResource("4")
 popup_top_offset = -40
 popup_size = Vector2(170, 32)
 popup_text = "Create a level!"
@@ -323,7 +634,7 @@ offset_top = -46.0
 offset_right = 180.0
 offset_bottom = 24.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_fonts/font = ExtResource("7")
 theme_override_font_sizes/font_size = 40
 text = "Create"
 horizontal_alignment = 1
@@ -339,7 +650,7 @@ pivot_offset = Vector2(0, 56)
 focus_next = NodePath("../Options")
 focus_previous = NodePath("../Create")
 focus_mode = 2
-script = ExtResource("4_vut6t")
+script = ExtResource("4")
 popup_right_offset = -20
 popup_top_offset = -40
 popup_size = Vector2(170, 32)
@@ -355,7 +666,7 @@ offset_top = -54.0
 offset_right = 160.0
 offset_bottom = 16.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_fonts/font = ExtResource("7")
 theme_override_font_sizes/font_size = 40
 text = "Play"
 horizontal_alignment = 1
@@ -370,7 +681,7 @@ offset_bottom = -16.0
 pivot_offset = Vector2(0, 56)
 focus_previous = NodePath("../Play")
 focus_mode = 2
-script = ExtResource("4_vut6t")
+script = ExtResource("4")
 popup_right_offset = -40
 popup_top_offset = -40
 icon_right_offset = 360
@@ -387,24 +698,24 @@ offset_top = -46.0
 offset_right = 200.0
 offset_bottom = 24.0
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_4jjk6")
+theme_override_fonts/font = ExtResource("7")
 theme_override_font_sizes/font_size = 40
 text = "Game Options"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="animation_finished" from="Root/BG/Mario/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="gui_input" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/MenuButtons/LauncherSettings" to="Root/UI/MenuButtons/LauncherSettings" method="_on_mouse_exited"]
 [connection signal="pressed" from="Root/UI/MenuButtons/LauncherSettings" to="." method="_on_launcher_settings_pressed"]
-[connection signal="gui_input" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_gui_input"]
-[connection signal="mouse_entered" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Root/UI/MenuButtons/CheckLauncherVersion" to="Root/UI/MenuButtons/CheckLauncherVersion" method="_on_mouse_exited"]
-[connection signal="pressed" from="Root/UI/MenuButtons/CheckLauncherVersion" to="." method="_on_check_launcher_version_pressed"]
 [connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]
 [connection signal="pressed" from="Root/UI/MenuButtons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="gui_input" from="Root/UI/PlayerPlate/Plate" to="Root/UI/PlayerPlate/Plate" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/PlayerPlate/Plate" to="Root/UI/PlayerPlate/Plate" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/PlayerPlate/Plate" to="Root/UI/PlayerPlate/Plate" method="_on_mouse_exited"]
 [connection signal="gui_input" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Buttons/Create" to="Root/UI/Buttons/Create" method="_on_mouse_exited"]

@@ -1,0 +1,243 @@
+[gd_scene format=3 uid="uid://xtc8tuih6mnl"]
+
+[ext_resource type="Script" uid="uid://dyg5wcal2h5iy" path="res://scenes/credits/credits.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2"]
+[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y66bu"]
+atlas = ExtResource("4")
+region = Rect2(51, 87, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4u7u"]
+atlas = ExtResource("4")
+region = Rect2(0, 106, 10, 14)
+
+[sub_resource type="Animation" id="Animation_cpytl"]
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/UI/Control/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 728)]
+}
+
+[sub_resource type="Animation" id="Animation_jv11q"]
+resource_name = "animation"
+length = 62.066666
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/UI/Control/text:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5.966667, 59.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 460), Vector2(7, -8), Vector2(0, -2800)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpytl"]
+_data = {
+&"RESET": SubResource("Animation_cpytl"),
+&"animation": SubResource("Animation_jv11q")
+}
+
+[node name="Credits" type="CanvasLayer" unique_id=473513821]
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=188450062]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Root" type="Control" parent="." unique_id=1804042524]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="UI" type="Control" parent="Root" unique_id=783562485]
+z_index = 1
+texture_filter = 1
+texture_repeat = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Control" type="Control" parent="Root/UI" unique_id=1206731284]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 648.0
+offset_bottom = 352.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="text" type="Label" parent="Root/UI/Control" unique_id=2052809974]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -644.0
+offset_top = 372.0
+offset_right = 636.0
+offset_bottom = 3732.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 0)
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 32
+text = "Mario Multiverse Launcher
+
+
+
+
+
+MUSIC
+Mad Nyle - Title Screen Theme
+Mario Multiverse Team - Profile Theme
+
+
+
+
+SOUNDS
+Nintendo
+Super Mario Maker - Button sounds
+Super Mario Bros 3 - Ping sound
+Super Mario World - Wrong sound
+Super Mario Bros - 1UP sound
+Super Mario Bros - Death sound
+
+Sonic Team
+Sonic Colors - WIFI Connection sound
+
+
+
+
+Sprites
+Nintendo - Super Mario Bros
+Neoarcutus - some of UI Assets
+Fonts: Minecraftia
+Special Thanks
+Neoarc and community for original game!
+
+
+
+Dell Latitude cichlet keyboard
+
+
+
+
+Software used
+Aseprite
+Audacity
+Godot
+
+
+
+
+
+
+
+
+This project is not endorsored or is afflitiated with Mario Multiverse in any way, this launcher is not an Downloader/Unlocker for beta version, and is for launching Beta/Demo version."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MenuButtons" type="Control" parent="Root/UI" unique_id=357323568]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -136.0
+offset_right = -96.0
+offset_bottom = 40.0
+grow_vertical = 0
+focus_mode = 2
+mouse_filter = 2
+
+[node name="Quit" type="Control" parent="Root/UI/MenuButtons" unique_id=1093233454]
+anchors_preset = 0
+offset_left = 143.0
+offset_top = -68.0
+offset_right = 207.0
+offset_bottom = -4.0
+pivot_offset = Vector2(16, 16)
+focus_neighbor_left = NodePath(".")
+focus_next = NodePath(".")
+focus_previous = NodePath(".")
+focus_mode = 2
+script = ExtResource("3")
+popup_top_offset = -40
+icon_right_offset = 110
+popup_text = "Go back"
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/MenuButtons/Quit" unique_id=1936888531]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_y66bu")
+region_rect = Rect2(-1, -1, 26, 26)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="Icon" type="TextureRect" parent="Root/UI/MenuButtons/Quit/BG" unique_id=531133354]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.25
+offset_top = -21.5
+offset_right = 16.25
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_a4u7u")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=963347993]
+libraries/ = SubResource("AnimationLibrary_cpytl")
+
+[connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/MenuButtons/Quit" to="." method="_on_quit_pressed"]

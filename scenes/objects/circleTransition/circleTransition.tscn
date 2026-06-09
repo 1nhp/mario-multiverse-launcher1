@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c62e6iwwlynvb"]
 
-[ext_resource type="Shader" uid="uid://cwwpn774hrq1s" path="res://scenes/objects/circleTransition/circleTransition.gdshader" id="1_siqdy"]
-[ext_resource type="Script" uid="uid://bkf3wxhg3abvg" path="res://scenes/objects/circleTransition/circle_transition.gd" id="3_msc7v"]
+[ext_resource type="Script" uid="uid://bkf3wxhg3abvg" path="res://scenes/objects/circleTransition/circle_transition.gd" id="1"]
+[ext_resource type="Shader" uid="uid://cwwpn774hrq1s" path="res://scenes/objects/circleTransition/circleTransition.gdshader" id="2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yv3c0"]
-shader = ExtResource("1_siqdy")
+shader = ExtResource("2")
 shader_parameter/_CirclePosition = Vector2(0.5, 0.5)
 shader_parameter/_Progress = 0.0
-shader_parameter/_Smoothness = 0.0
+shader_parameter/_Smoothness = 0.00999999977648
 shader_parameter/_Background = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_yv3c0"]
@@ -39,7 +39,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_msc7v"]
 resource_name = "transition"
-length = 0.6
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,7 +47,7 @@ tracks/0/path = NodePath("ColorRect:material:shader_parameter/_Progress")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.36666667),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 0.999999977648]
@@ -61,8 +61,8 @@ _data = {
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1174489649]
 process_mode = 3
-layer = 3
-script = ExtResource("3_msc7v")
+layer = 6
+script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=212009825]
 material = SubResource("ShaderMaterial_yv3c0")

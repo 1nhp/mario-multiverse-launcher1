@@ -1,36 +1,35 @@
 [gd_scene format=3 uid="uid://dtg7btl84l2hf"]
 
-[ext_resource type="Script" uid="uid://c2u25bhu6bif3" path="res://scenes/managers/sound_manager/sound_manager.gd" id="1_12qxk"]
-[ext_resource type="AudioStream" uid="uid://b3nyept1k3bfx" path="res://sounds/hover.wav" id="2_6g708"]
-[ext_resource type="AudioStream" uid="uid://c7lwvapr782t3" path="res://sounds/decide.wav" id="3_3dcon"]
-[ext_resource type="AudioStream" uid="uid://d3s2jym0lhqru" path="res://sounds/correct.wav" id="4_g4f3q"]
-[ext_resource type="AudioStream" uid="uid://cqd8th385mjda" path="res://sounds/wrong.wav" id="5_gylff"]
-[ext_resource type="AudioStream" uid="uid://dbodqjb130t3g" path="res://sounds/destroy.wav" id="6_gylff"]
-[ext_resource type="AudioStream" uid="uid://bqfkur1ttiurj" path="res://sounds/update_complete.wav" id="7_a2xkf"]
+[ext_resource type="Script" uid="uid://c2u25bhu6bif3" path="res://scenes/managers/sound_manager/sound_manager.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://c7lwvapr782t3" path="res://sounds/decide.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://b3nyept1k3bfx" path="res://sounds/hover.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://d3s2jym0lhqru" path="res://sounds/correct.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://cqd8th385mjda" path="res://sounds/wrong.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://dbodqjb130t3g" path="res://sounds/destroy.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://bqfkur1ttiurj" path="res://sounds/update_complete.wav" id="7"]
 
 [node name="SoundManager" type="Node" unique_id=2048127696]
 process_mode = 3
-script = ExtResource("1_12qxk")
+script = ExtResource("1")
 
 [node name="decide" type="AudioStreamPlayer2D" parent="." unique_id=775620235]
-stream = ExtResource("3_3dcon")
+stream = ExtResource("2")
 volume_db = 5.0
 
 [node name="hover" type="AudioStreamPlayer2D" parent="." unique_id=1039487458]
-stream = ExtResource("2_6g708")
+stream = ExtResource("3")
 volume_db = 4.35
 
 [node name="correct" type="AudioStreamPlayer2D" parent="." unique_id=911003841]
-stream = ExtResource("4_g4f3q")
+stream = ExtResource("4")
 
 [node name="wrong" type="AudioStreamPlayer2D" parent="." unique_id=24450794]
-stream = ExtResource("5_gylff")
+stream = ExtResource("5")
 volume_db = 12.0
 
 [node name="destroy" type="AudioStreamPlayer2D" parent="." unique_id=1464918566]
-stream = ExtResource("6_gylff")
+stream = ExtResource("6")
 volume_db = 12.0
 
 [node name="update_complete" type="AudioStreamPlayer2D" parent="." unique_id=1722810361]
-stream = ExtResource("7_a2xkf")
-volume_db = 12.0
+stream = ExtResource("7")

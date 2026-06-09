@@ -1,69 +1,141 @@
 [gd_scene format=4 uid="uid://dqbeo73xfvcg0"]
 
-[ext_resource type="Script" uid="uid://bdnnc3kq1qwlx" path="res://scenes/launchersettings/settings.gd" id="1_bmvfj"]
-[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2_4cq0a"]
-[ext_resource type="Texture2D" uid="uid://b2hfg5uvfw1oq" path="res://sprites/Backgrounds.png" id="2_puk5m"]
-[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="4_puk5m"]
-[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="5_uscfh"]
-[ext_resource type="Theme" uid="uid://bo4o85n6x5w0g" path="res://data/new_theme.tres" id="6_cn38x"]
-[ext_resource type="Script" uid="uid://cfw4s12fc78xf" path="res://scripts/textedit_entry.gd" id="7_puk5m"]
+[ext_resource type="Script" uid="uid://bdnnc3kq1qwlx" path="res://scenes/launchersettings/settings.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b2hfg5uvfw1oq" path="res://sprites/Backgrounds.png" id="2"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="3"]
+[ext_resource type="Theme" uid="uid://bo4o85n6x5w0g" path="res://data/new_theme.tres" id="4"]
+[ext_resource type="Script" uid="uid://ywky82gk11fd" path="res://scripts/label_button.gd" id="5"]
+[ext_resource type="Script" uid="uid://cfw4s12fc78xf" path="res://scripts/textedit_entry.gd" id="6"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uscfh"]
-texture = ExtResource("2_puk5m")
+texture = ExtResource("2")
 0:0/0 = 0
+0:0/0/script = null
 1:0/0 = 0
+1:0/0/script = null
 2:0/0 = 0
+2:0/0/script = null
 3:0/0 = 0
+3:0/0/script = null
 4:0/0 = 0
+4:0/0/script = null
 5:0/0 = 0
+5:0/0/script = null
 0:1/0 = 0
+0:1/0/script = null
 1:1/0 = 0
+1:1/0/script = null
 2:1/0 = 0
+2:1/0/script = null
 3:1/0 = 0
+3:1/0/script = null
 4:1/0 = 0
+4:1/0/script = null
 5:1/0 = 0
+5:1/0/script = null
 0:2/0 = 0
+0:2/0/script = null
 1:2/0 = 0
+1:2/0/script = null
 2:2/0 = 0
+2:2/0/script = null
 3:2/0 = 0
+3:2/0/script = null
 4:2/0 = 0
+4:2/0/script = null
 5:2/0 = 0
+5:2/0/script = null
 0:3/0 = 0
+0:3/0/script = null
 1:3/0 = 0
+1:3/0/script = null
 2:3/0 = 0
+2:3/0/script = null
 3:3/0 = 0
+3:3/0/script = null
 4:3/0 = 0
+4:3/0/script = null
 5:3/0 = 0
+5:3/0/script = null
 0:4/0 = 0
+0:4/0/script = null
 1:4/0 = 0
+1:4/0/script = null
 2:4/0 = 0
+2:4/0/script = null
 3:4/0 = 0
+3:4/0/script = null
 4:4/0 = 0
+4:4/0/script = null
 5:4/0 = 0
+5:4/0/script = null
 0:5/0 = 0
+0:5/0/script = null
 1:5/0 = 0
+1:5/0/script = null
 2:5/0 = 0
+2:5/0/script = null
 3:5/0 = 0
+3:5/0/script = null
 4:5/0 = 0
+4:5/0/script = null
 5:5/0 = 0
+5:5/0/script = null
 
 [sub_resource type="TileSet" id="TileSet_0giqf"]
 sources/1 = SubResource("TileSetAtlasSource_uscfh")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_00py3"]
-atlas = ExtResource("4_puk5m")
+atlas = ExtResource("7")
 region = Rect2(0, 85, 11, 11)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cn38x"]
-atlas = ExtResource("4_puk5m")
+atlas = ExtResource("7")
 region = Rect2(51, 87, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uscfh"]
-atlas = ExtResource("4_puk5m")
+atlas = ExtResource("7")
 region = Rect2(0, 106, 10, 14)
 
+[sub_resource type="Animation" id="Animation_uscfh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/header:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [-600.0]
+}
+
+[sub_resource type="Animation" id="Animation_cn38x"]
+resource_name = "animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Root/header:position:x")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.23333333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-600.0, 12.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puk5m"]
+_data = {
+&"RESET": SubResource("Animation_uscfh"),
+&"animation": SubResource("Animation_cn38x")
+}
+
 [node name="LauncherSettings" type="CanvasLayer" unique_id=473513821]
-script = ExtResource("1_bmvfj")
+script = ExtResource("1")
 
 [node name="Root" type="Control" parent="." unique_id=1804042524]
 layout_mode = 3
@@ -92,16 +164,16 @@ tile_set = SubResource("TileSet_0giqf")
 
 [node name="header" type="Label" parent="Root" unique_id=796907200]
 layout_mode = 1
-offset_left = 75.0
-offset_top = 36.0
-offset_right = 555.0
-offset_bottom = 106.0
+offset_left = -600.0
+offset_top = 13.0
+offset_right = -120.0
+offset_bottom = 83.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 2
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/font = ExtResource("2_4cq0a")
+theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 40
 text = "LAUNCHER SETTINGS"
 horizontal_alignment = 1
@@ -121,180 +193,20 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Window" type="Control" parent="Root/UI" unique_id=1714282745]
+[node name="Window" type="Panel" parent="Root/UI" unique_id=334641854]
 layout_mode = 1
-anchor_left = 0.069000006
-anchor_top = 0.11400001
-anchor_right = 0.93100005
-anchor_bottom = 0.88900006
-offset_left = -88.32001
-offset_top = -82.08
-offset_right = 88.31995
-offset_bottom = 79.91998
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BG" type="NinePatchRect" parent="Root/UI/Window" unique_id=1064188287]
-modulate = Color(1, 1, 1, 0.60784316)
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.93100005
-anchor_bottom = 0.91400003
-offset_left = 88.0
-offset_top = 82.0
-offset_right = 0.3199463
-offset_bottom = -16.080017
-grow_horizontal = 2
-grow_vertical = 2
-texture = SubResource("AtlasTexture_00py3")
-patch_margin_left = 5
-patch_margin_top = 5
-patch_margin_right = 5
-patch_margin_bottom = 5
-
-[node name="Buttons" type="Control" parent="Root/UI/Window" unique_id=20629747]
-layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -552.0
-offset_top = 82.0
-offset_right = 556.0
-offset_bottom = 640.0
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -280.0
+offset_right = 592.0
+offset_bottom = 295.0
 grow_horizontal = 2
-mouse_filter = 2
-
-[node name="GameDirectory" type="Control" parent="Root/UI/Window/Buttons" unique_id=1334827076]
-anchors_preset = 0
-offset_left = 16.0
-offset_top = 24.0
-offset_right = 320.0
-offset_bottom = 72.0
-pivot_offset = Vector2(0, 56)
-focus_next = NodePath("../Play")
-focus_mode = 2
-script = ExtResource("5_uscfh")
-popup_top_offset = -40
-icon_right_offset = 5
-icon_top_offset = -0.1
-popup_size = Vector2(300, 0)
-popup_text = "Set game directory here."
-
-[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/GameDirectory" unique_id=226190022]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 10.0
-offset_right = 1038.0
-offset_bottom = 42.0
-theme = ExtResource("6_cn38x")
-placeholder_text = "Select game path"
-max_length = 256
-script = ExtResource("7_puk5m")
-
-[node name="text" type="Label" parent="Root/UI/Window/Buttons/GameDirectory" unique_id=1874965191]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -51.0
-offset_right = 296.0
-offset_bottom = 5.0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_4cq0a")
-theme_override_font_sizes/font_size = 32
-text = "Game directory"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="RPCBridgeDirectory" type="Control" parent="Root/UI/Window/Buttons" unique_id=541111511]
-anchors_preset = 0
-offset_left = 16.0
-offset_top = 88.0
-offset_right = 448.0
-offset_bottom = 136.0
-pivot_offset = Vector2(0, 56)
-focus_next = NodePath("../Play")
-focus_mode = 2
-script = ExtResource("5_uscfh")
-popup_top_offset = 50
-icon_right_offset = 5
-icon_top_offset = -0.1
-popup_size = Vector2(440, -30)
-popup_text = "Set Discord RPC bridge directory, for Linux.
-
-Discord RPC bridge is an bridge for discord rpc to work only for Linux.
-
-https://github.com/EnderIce2/rpc-bridge"
-
-[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/RPCBridgeDirectory" unique_id=683891448]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 10.0
-offset_right = 1038.0
-offset_bottom = 42.0
-theme = ExtResource("6_cn38x")
-placeholder_text = "Select discord rpc path"
-max_length = 256
-script = ExtResource("7_puk5m")
-
-[node name="text" type="Label" parent="Root/UI/Window/Buttons/RPCBridgeDirectory" unique_id=1832895045]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -51.0
-offset_right = 432.0
-offset_bottom = 5.0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_4cq0a")
-theme_override_font_sizes/font_size = 32
-text = "Discord RPC directory"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="WinePrefixName" type="Control" parent="Root/UI/Window/Buttons" unique_id=16587043]
-anchors_preset = 0
-offset_left = 16.0
-offset_top = 152.0
-offset_right = 448.0
-offset_bottom = 200.0
-pivot_offset = Vector2(0, 56)
-focus_next = NodePath("../Play")
-focus_mode = 2
-script = ExtResource("5_uscfh")
-popup_top_offset = 50
-icon_right_offset = 5
-icon_top_offset = -0.1
-popup_size = Vector2(400, -30)
-popup_text = "Set Wine prefix name here.
-
-NOTE: Wine prefix will execute at the home directory"
-
-[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/WinePrefixName" unique_id=2028101570]
-layout_mode = 0
-offset_left = 448.0
-offset_top = 10.0
-offset_right = 1038.0
-offset_bottom = 42.0
-theme = ExtResource("6_cn38x")
-placeholder_text = "Type prefix name"
-max_length = 256
-script = ExtResource("7_puk5m")
-
-[node name="text" type="Label" parent="Root/UI/Window/Buttons/WinePrefixName" unique_id=253034644]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -51.0
-offset_right = 432.0
-offset_bottom = 5.0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("2_4cq0a")
-theme_override_font_sizes/font_size = 32
-text = "Wine Prefix Name"
-vertical_alignment = 1
+grow_vertical = 2
+theme = ExtResource("4")
 
 [node name="Buttons_br" type="Control" parent="Root/UI/Window" unique_id=1560365919]
 layout_mode = 1
@@ -302,10 +214,10 @@ anchor_left = 0.93100005
 anchor_top = 0.88900006
 anchor_right = 0.93100005
 anchor_bottom = 0.892
-offset_left = -1103.68
-offset_top = -558.08
-offset_right = 0.3199463
-offset_bottom = 1.7600098
+offset_left = -232.51208
+offset_top = -7.1750183
+offset_right = 74.75598
+offset_bottom = 53.28003
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
@@ -324,13 +236,14 @@ grow_vertical = 0
 pivot_offset = Vector2(0, 56)
 focus_next = NodePath("../Play")
 focus_mode = 2
-script = ExtResource("5_uscfh")
+script = ExtResource("5")
 popup_right_offset = -60
 popup_top_offset = 50
 icon_right_offset = 5
 icon_top_offset = -0.1
 popup_size = Vector2(400, -30)
 popup_text = "Reset the launcher settings here. proceed with caution.."
+metadata/_edit_lock_ = true
 
 [node name="text" type="Label" parent="Root/UI/Window/Buttons_br/ResetData" unique_id=1061250881]
 layout_mode = 1
@@ -345,11 +258,187 @@ offset_right = 216.0
 offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_4cq0a")
+theme_override_fonts/font = ExtResource("3")
 theme_override_font_sizes/font_size = 32
 text = "Reset settings"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Buttons" type="Control" parent="Root/UI/Window" unique_id=20629747]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -572.0022
+offset_top = 2.0
+offset_right = 535.9978
+offset_bottom = 216.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="GameDirectory" type="Control" parent="Root/UI/Window/Buttons" unique_id=1334827076]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 320.0
+offset_bottom = 72.0
+pivot_offset = Vector2(0, 56)
+focus_next = NodePath("../Play")
+focus_mode = 2
+script = ExtResource("5")
+popup_top_offset = -40
+icon_right_offset = 5
+icon_top_offset = -0.1
+popup_size = Vector2(300, 0)
+popup_text = "Set game directory here."
+
+[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/GameDirectory" unique_id=226190022]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 10.0
+offset_right = 1038.0
+offset_bottom = 42.0
+theme = ExtResource("4")
+placeholder_text = "Select game path"
+max_length = 256
+script = ExtResource("6")
+
+[node name="text" type="Label" parent="Root/UI/Window/Buttons/GameDirectory" unique_id=1874965191]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_right = 296.0
+offset_bottom = 5.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 32
+text = "Game directory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RPCBridgeDirectory" type="Control" parent="Root/UI/Window/Buttons" unique_id=541111511]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 88.0
+offset_right = 448.0
+offset_bottom = 136.0
+pivot_offset = Vector2(0, 56)
+focus_next = NodePath("../Play")
+focus_mode = 2
+script = ExtResource("5")
+popup_top_offset = 50
+icon_right_offset = 5
+icon_top_offset = -0.1
+popup_size = Vector2(440, -30)
+popup_text = "Set Discord RPC bridge directory, for Linux.
+
+Discord RPC bridge is an bridge for discord rpc to work only for Linux.
+
+https://github.com/EnderIce2/rpc-bridge"
+
+[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/RPCBridgeDirectory" unique_id=683891448]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 10.0
+offset_right = 1038.0
+offset_bottom = 42.0
+theme = ExtResource("4")
+placeholder_text = "Select discord rpc path"
+max_length = 256
+script = ExtResource("6")
+
+[node name="text" type="Label" parent="Root/UI/Window/Buttons/RPCBridgeDirectory" unique_id=1832895045]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_right = 432.0
+offset_bottom = 5.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 32
+text = "Discord RPC directory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WinePrefixName" type="Control" parent="Root/UI/Window/Buttons" unique_id=16587043]
+anchors_preset = 0
+offset_left = 16.0
+offset_top = 152.0
+offset_right = 448.0
+offset_bottom = 200.0
+pivot_offset = Vector2(0, 56)
+focus_next = NodePath("../Play")
+focus_mode = 2
+script = ExtResource("5")
+popup_top_offset = 50
+icon_right_offset = 5
+icon_top_offset = -0.1
+popup_size = Vector2(400, -30)
+popup_text = "Set Wine prefix name here.
+
+NOTE: Wine prefix will execute at the home directory"
+
+[node name="dir_text" type="LineEdit" parent="Root/UI/Window/Buttons/WinePrefixName" unique_id=2028101570]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 10.0
+offset_right = 1038.0
+offset_bottom = 42.0
+theme = ExtResource("4")
+placeholder_text = "Type prefix name"
+max_length = 256
+script = ExtResource("6")
+
+[node name="text" type="Label" parent="Root/UI/Window/Buttons/WinePrefixName" unique_id=253034644]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -51.0
+offset_right = 432.0
+offset_bottom = 5.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 32
+text = "Wine Prefix Name"
+vertical_alignment = 1
+
+[node name="Window3" type="Control" parent="Root/UI" unique_id=1714282745]
+visible = false
+layout_mode = 1
+anchor_left = 0.069000006
+anchor_top = 0.11400001
+anchor_right = 0.93100005
+anchor_bottom = 0.88900006
+offset_left = 1411.6799
+offset_top = -82.08
+offset_right = 1588.3138
+offset_bottom = 79.91998
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="NinePatchRect" parent="Root/UI/Window3" unique_id=1064188287]
+modulate = Color(1, 1, 1, 0.60784316)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.93100005
+anchor_bottom = 0.91400003
+offset_left = 88.0
+offset_top = 82.0
+offset_right = 0.3199463
+offset_bottom = -16.080017
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_00py3")
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
 
 [node name="MenuButtons" type="Control" parent="Root/UI" unique_id=1857218372]
 layout_mode = 1
@@ -375,7 +464,7 @@ focus_neighbor_left = NodePath(".")
 focus_next = NodePath(".")
 focus_previous = NodePath(".")
 focus_mode = 2
-script = ExtResource("5_uscfh")
+script = ExtResource("5")
 popup_top_offset = -40
 icon_right_offset = 110
 popup_text = "Go back"
@@ -410,17 +499,13 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_uscfh")
 stretch_mode = 4
 
-[node name="TOP" type="Control" parent="Root/UI" unique_id=2045733807]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
-grow_horizontal = 2
-mouse_filter = 2
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=716626851]
+libraries/ = SubResource("AnimationLibrary_puk5m")
 
+[connection signal="gui_input" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_gui_input"]
+[connection signal="mouse_entered" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_mouse_exited"]
+[connection signal="pressed" from="Root/UI/Window/Buttons_br/ResetData" to="." method="_on_reset_data_pressed"]
 [connection signal="gui_input" from="Root/UI/Window/Buttons/GameDirectory" to="Root/UI/Window/Buttons/GameDirectory" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/Window/Buttons/GameDirectory" to="Root/UI/Window/Buttons/GameDirectory" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Window/Buttons/GameDirectory" to="Root/UI/Window/Buttons/GameDirectory" method="_on_mouse_exited"]
@@ -435,10 +520,6 @@ mouse_filter = 2
 [connection signal="mouse_entered" from="Root/UI/Window/Buttons/WinePrefixName" to="Root/UI/Window/Buttons/WinePrefixName" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/Window/Buttons/WinePrefixName" to="Root/UI/Window/Buttons/WinePrefixName" method="_on_mouse_exited"]
 [connection signal="changed" from="Root/UI/Window/Buttons/WinePrefixName/dir_text" to="." method="_on_dir_text_changed"]
-[connection signal="gui_input" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_gui_input"]
-[connection signal="mouse_entered" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Root/UI/Window/Buttons_br/ResetData" to="Root/UI/Window/Buttons_br/ResetData" method="_on_mouse_exited"]
-[connection signal="pressed" from="Root/UI/Window/Buttons_br/ResetData" to="." method="_on_reset_data_pressed"]
 [connection signal="gui_input" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_gui_input"]
 [connection signal="mouse_entered" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Root/UI/MenuButtons/Quit" to="Root/UI/MenuButtons/Quit" method="_on_mouse_exited"]

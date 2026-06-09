@@ -1,41 +1,202 @@
-[gd_scene format=3 uid="uid://mrdw2df76sn5"]
+[gd_scene format=4 uid="uid://mrdw2df76sn5"]
 
-[ext_resource type="Script" uid="uid://cefocyeddixdg" path="res://scenes/objects/window/scripts/window_update.gd" id="1_f0f2n"]
-[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_c2ua2"]
-[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="3_4mepa"]
-[ext_resource type="Texture2D" uid="uid://bxq7iklic1lfy" path="res://sprites/update_mario.png" id="4_f0f2n"]
+[ext_resource type="Script" uid="uid://cefocyeddixdg" path="res://scenes/objects/window/scripts/window_update.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://cfxyex710gsm0" path="res://music/bgm_update_failed.ogg" id="2"]
+[ext_resource type="AudioStream" uid="uid://cwel64xxwi376" path="res://sounds/coin.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://ofjmggr4omki" path="res://sounds/jumpsmall.wav" id="4"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://chdeyucc66j6o" path="res://sprites/update_objects.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bxq7iklic1lfy" path="res://sprites/update_mario.png" id="7"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uustq"]
-atlas = ExtResource("2_c2ua2")
+atlas = ExtResource("5")
 region = Rect2(31, 87, 19, 19)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2ua2"]
-atlas = ExtResource("4_f0f2n")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_n106i"]
+atlas = ExtResource("6")
+region = Rect2(16, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4mepa"]
-atlas = ExtResource("4_f0f2n")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_60npc"]
+atlas = ExtResource("6")
+region = Rect2(33, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_orswa"]
-atlas = ExtResource("4_f0f2n")
-region = Rect2(0, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_35ii3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_orswa"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c2ua2")
+"texture": SubResource("AtlasTexture_n106i")
 }, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60npc")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_35ii3"]
+texture = ExtResource("6")
+0:2/0 = 0
+0:2/0/script = null
+
+[sub_resource type="TileSet" id="TileSet_4mepa"]
+sources/0 = SubResource("TileSetAtlasSource_35ii3")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10xru"]
+atlas = ExtResource("7")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spdp0"]
+atlas = ExtResource("7")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3enq"]
+atlas = ExtResource("7")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mepa"]
+atlas = ExtResource("7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orswa"]
+atlas = ExtResource("7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg871"]
+atlas = ExtResource("7")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n106i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10xru")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spdp0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3enq")
+}],
+"loop": true,
+"name": &"jumping",
+"speed": 0.0
+}, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4mepa")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_orswa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg871")
+}],
+"loop": true,
+"name": &"running",
+"speed": 15.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35ii3"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnlnu"]
+atlas = ExtResource("6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aavqx"]
+atlas = ExtResource("6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2ua2"]
+atlas = ExtResource("6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2ua2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35ii3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnlnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aavqx")
 }],
 "loop": true,
 "name": &"default",
-"speed": 15.0
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2ua2")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwtdg"]
+atlas = ExtResource("6")
+region = Rect2(0, 16, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucydq"]
+atlas = ExtResource("6")
+region = Rect2(11, 16, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6byy"]
+atlas = ExtResource("6")
+region = Rect2(22, 16, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4ldf"]
+atlas = ExtResource("6")
+region = Rect2(33, 16, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yetm5"]
+atlas = ExtResource("6")
+region = Rect2(44, 16, 11, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws2jk"]
+atlas = ExtResource("6")
+region = Rect2(55, 16, 11, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_35ii3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwtdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucydq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6byy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4ldf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yetm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws2jk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }]
 
 [sub_resource type="Animation" id="Animation_w4wpo"]
@@ -115,51 +276,542 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/BG/Mario_walking:visible")
+tracks/6/path = NodePath("Control/BG/Progress/Mario_walking:position:x")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [50.0]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Control/BG/Mario_walking:position:x")
+tracks/7/path = NodePath("Control/BG/Progress/Mario_walking:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [50.0]
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Control/BG/Mario_walking:modulate")
+tracks/8/path = NodePath("Control/BG/Progress/Mario_walking:position:y")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [600.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/BG/Progress:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/BG/Progress/qblock:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(458, 332)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Control/BG/Progress/qblock:position:x")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [458.0]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Control/BG/Progress/qblock:position:y")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [332.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Control/BG/Progress/qblock:animation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Control/BG/Progress/Mario_walking:animation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Control/BG/Progress/Mario_walking:speed_scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Control/BG/Progress/Parallax2D:autoscroll")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-500, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Control/BG/Progress/goomba:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1034, 478)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Control/BG/Progress/goomba:position:x")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1034.0]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("bgm_update_failed:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Control/BG/Progress:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -33)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("jump:playing")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("coin:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Control/BG/Progress/coin:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1002, 476.00003)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Control/BG/Progress/coin:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Control/BG/Progress/coin2:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(779.06665, 476.00003)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Control/BG/Progress/coin2:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_orswa"]
+resource_name = "mario_update_failed"
+length = 7.1
+step = 0.1
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("Control/BG/Progress/Mario_walking:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-100.0, 700.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BG/Progress/Mario_walking:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BG/Progress/Mario_walking:position:y")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.7, 1.9, 3.6),
+"transitions": PackedFloat32Array(1e-05, 1, 1, 4389.9824),
+"update": 2,
+"values": [480.0, 480.0, 380.0, 900.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BG/Progress/qblock:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BG/Progress/qblock:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BG/Progress/Mario_walking:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"running", &"dead"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/BG/Progress/goomba:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.2, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1034.0, 700.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("bgm_update_failed:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/BG/Progress/Parallax2D:autoscroll")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(-500, 0), Vector2(0, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/BG/Progress:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.0050000027, 1.1, 1.1486843, 1.2066985, 1.2647129, 1.3273923, 1.3947368, 1.6124457),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 1), Vector2(0, 1), Vector2(26, 1), Vector2(-22, 1), Vector2(0, 1), Vector2(-22, 1), Vector2(-6, 1), Vector2(-6, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c2ua2"]
+resource_name = "mario_walking"
+length = 5.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/BG/Progress/Mario_walking:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.6, 3.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [455.0, 1100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/BG/Progress/Mario_walking:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BG/Progress/Mario_walking:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6, 0.8, 1.0000001, 1.2000002, 1.4000002, 1.6, 1.8000001, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [480.0, 480.0, 395.0, 480.0, 395.0, 480.0, 395.0, 480.0, 395.0, 480.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BG/Progress/qblock:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 0.70000017, 0.7846519, 1.0000001, 1.1000001, 1.184652, 1.4000001, 1.5000001, 1.5846521, 1.8000001, 1.9, 1.9846522),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [332.0, 290.0, 332.0, 332.0, 290.0, 332.0, 332.0, 290.0, 332.0, 332.0, 290.0, 332.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BG/Progress/qblock:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.8000001, 1.9000002),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"default", &"hit"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BG/Progress/Mario_walking:animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.8, 0.9, 1.2, 1.3, 1.6, 1.7, 2, 2.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"idle", &"jumping", &"idle", &"jumping", &"idle", &"jumping", &"idle", &"jumping", &"idle", &"running"]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/BG/Progress/Mario_walking:speed_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.6),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.5]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/BG/Progress/Parallax2D:autoscroll")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("jump:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.4, 0.8, 1.3000001, 1.8000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("coin:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.4, 1.8, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/BG/Progress/coin:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0.099999905, 2.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Control/BG/Progress/coin2:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0.1, 3.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_f0f2n"]
 resource_name = "mario_walking"
-length = 3.1
+length = 3.0
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/BG/Mario_walking:position:x")
+tracks/0/path = NodePath("Control/BG/Progress/Mario_walking:position:x")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 2.4),
 "transitions": PackedFloat32Array(1, 1),
@@ -169,14 +821,122 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Control/BG/Mario_walking:modulate")
+tracks/1/path = NodePath("Control/BG/Progress/Mario_walking:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.1000001, 2.3000002),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 2.1000001, 2.4, 2.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/BG/Progress/Mario_walking:position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [480.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/BG/Progress/qblock:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/BG/Progress/qblock:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/BG/Progress/Mario_walking:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [480.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("coin:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.5, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Control/BG/Progress/coin:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1002, 476.00003), Vector2(698, 476.00003)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Control/BG/Progress/coin:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Control/BG/Progress/coin2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2, 2.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1018, 476.00003), Vector2(1001.1579, 476.00003), Vector2(858, 476)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Control/BG/Progress/coin2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_dorux"]
@@ -258,19 +1018,21 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Control/BG/Mario_walking:visible")
+tracks/6/path = NodePath("Control/BG/Progress:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0.04413201, 0.22128305),
 "transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7puge"]
 _data = {
 &"RESET": SubResource("Animation_w4wpo"),
+&"mario_update_failed": SubResource("Animation_orswa"),
+&"mario_update_finish": SubResource("Animation_c2ua2"),
 &"mario_walking": SubResource("Animation_f0f2n"),
 &"slide": SubResource("Animation_dorux")
 }
@@ -278,8 +1040,18 @@ _data = {
 [node name="WindowUpdating" type="CanvasLayer" unique_id=1702857631 groups=["Window", "WindowUpdating"]]
 process_mode = 3
 layer = 4
-script = ExtResource("1_f0f2n")
+script = ExtResource("1")
 window_text = "Updating... please wait."
+
+[node name="bgm_update_failed" type="AudioStreamPlayer2D" parent="." unique_id=2043252250]
+stream = ExtResource("2")
+volume_db = 10.0
+
+[node name="coin" type="AudioStreamPlayer2D" parent="." unique_id=433106495]
+stream = ExtResource("3")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="." unique_id=1061197071]
+stream = ExtResource("4")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=861197367]
 anchors_preset = 15
@@ -323,6 +1095,72 @@ patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
+[node name="Progress" type="Control" parent="Control/BG" unique_id=798206101]
+z_index = -1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -488.0
+offset_top = -655.0
+offset_right = 488.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="goomba" type="AnimatedSprite2D" parent="Control/BG/Progress" unique_id=175197952]
+visibility_layer = 2
+z_index = 1
+position = Vector2(1034, 478)
+scale = Vector2(4.1875005, 4.1875005)
+sprite_frames = SubResource("SpriteFrames_orswa")
+animation = &"idle"
+frame_progress = 0.16892001
+speed_scale = 1.5
+
+[node name="Parallax2D" type="Parallax2D" parent="Control/BG/Progress" unique_id=1891957989]
+scale = Vector2(3.02, 3)
+scroll_offset = Vector2(-145.91998, 177.00006)
+repeat_size = Vector2(96, 0)
+autoscroll = Vector2(-500, 0)
+limit_begin = Vector2(-10000001, -10000000)
+
+[node name="Ground" type="TileMapLayer" parent="Control/BG/Progress/Parallax2D" unique_id=132693764]
+z_index = 1
+position = Vector2(-1.001358e-05, -1.5258789e-05)
+scale = Vector2(1.0000006, 1.0000006)
+tile_map_data = PackedByteArray("AAADAAcAAAAAAAIAAAADAAgAAAAAAAIAAAADAAkAAAAAAAIAAAAEAAcAAAAAAAIAAAAEAAgAAAAAAAIAAAAEAAkAAAAAAAIAAAAFAAcAAAAAAAIAAAAFAAgAAAAAAAIAAAAFAAkAAAAAAAIAAAAGAAcAAAAAAAIAAAAGAAgAAAAAAAIAAAAGAAkAAAAAAAIAAAAHAAcAAAAAAAIAAAAHAAgAAAAAAAIAAAAHAAkAAAAAAAIAAAAIAAcAAAAAAAIAAAAIAAgAAAAAAAIAAAAIAAkAAAAAAAIAAAAJAAcAAAAAAAIAAAAJAAgAAAAAAAIAAAAJAAkAAAAAAAIAAAAKAAcAAAAAAAIAAAAKAAgAAAAAAAIAAAAKAAkAAAAAAAIAAAALAAcAAAAAAAIAAAALAAgAAAAAAAIAAAALAAkAAAAAAAIAAAAMAAcAAAAAAAIAAAAMAAgAAAAAAAIAAAAMAAkAAAAAAAIAAAANAAcAAAAAAAIAAAANAAgAAAAAAAIAAAANAAkAAAAAAAIAAAAOAAcAAAAAAAIAAAAOAAgAAAAAAAIAAAAOAAkAAAAAAAIAAAAPAAcAAAAAAAIAAAAPAAgAAAAAAAIAAAAPAAkAAAAAAAIAAAAQAAcAAAAAAAIAAAAQAAgAAAAAAAIAAAAQAAkAAAAAAAIAAAARAAcAAAAAAAIAAAARAAgAAAAAAAIAAAARAAkAAAAAAAIAAAASAAcAAAAAAAIAAAASAAgAAAAAAAIAAAASAAkAAAAAAAIAAAATAAcAAAAAAAIAAAATAAgAAAAAAAIAAAATAAkAAAAAAAIAAAAUAAcAAAAAAAIAAAAUAAgAAAAAAAIAAAAUAAkAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_4mepa")
+metadata/_edit_lock_ = true
+
+[node name="Mario_walking" type="AnimatedSprite2D" parent="Control/BG/Progress" unique_id=703392656]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+position = Vector2(50, 600)
+scale = Vector2(4.1875005, 4.1875005)
+sprite_frames = SubResource("SpriteFrames_n106i")
+animation = &"idle"
+
+[node name="qblock" type="AnimatedSprite2D" parent="Control/BG/Progress" unique_id=1124331937]
+z_index = 1
+position = Vector2(458, 332)
+scale = Vector2(4.1875005, 4.1875005)
+sprite_frames = SubResource("SpriteFrames_c2ua2")
+frame_progress = 0.81432426
+
+[node name="coin" type="AnimatedSprite2D" parent="Control/BG/Progress" unique_id=614441738]
+z_index = 1
+position = Vector2(1002, 476.00003)
+scale = Vector2(3.5482888, 3.548289)
+sprite_frames = SubResource("SpriteFrames_35ii3")
+
+[node name="coin2" type="AnimatedSprite2D" parent="Control/BG/Progress" unique_id=253291933]
+z_index = 1
+position = Vector2(779.06665, 476.00003)
+scale = Vector2(3.5482888, 3.548289)
+sprite_frames = SubResource("SpriteFrames_35ii3")
+
 [node name="Control" type="Control" parent="Control/BG" unique_id=2077829661]
 layout_mode = 1
 anchors_preset = 15
@@ -330,6 +1168,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="message" type="Label" parent="Control/BG/Control" unique_id=168959647]
 layout_mode = 1
@@ -339,17 +1178,18 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -473.0
-offset_top = -226.0
+offset_top = -319.0
 offset_right = 453.0
-offset_bottom = 196.0
+offset_bottom = 103.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("3_4mepa")
+theme_override_fonts/font = ExtResource("8")
 theme_override_font_sizes/font_size = 40
 text = "Updating... please wait."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+metadata/_edit_lock_ = true
 
 [node name="Buttons" type="Control" parent="Control/BG/Control" unique_id=96927085]
 layout_mode = 1
@@ -365,15 +1205,9 @@ offset_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Mario_walking" type="AnimatedSprite2D" parent="Control/BG" unique_id=703392656]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(50, 607)
-scale = Vector2(4.1875, 4.1875)
-sprite_frames = SubResource("SpriteFrames_35ii3")
-frame_progress = 0.82898414
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1797489500]
 libraries/ = SubResource("AnimationLibrary_7puge")
+speed_scale = 1.4
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished2"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

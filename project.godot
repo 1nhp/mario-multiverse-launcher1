@@ -38,6 +38,10 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/vsync/vsync_mode=0
 
+[editor_overrides]
+
+text_editor/behavior/indent/type=1
+
 [global_group]
 
 Window=""
@@ -65,7 +69,10 @@ reload_scene={
 
 [physics]
 
-3d/physics_engine="Jolt Physics"
+2d/physics_engine="Dummy"
+3d/physics_engine="Dummy"
+2d/default_gravity=0.0
+2d/default_gravity_vector=Vector2(0, 0)
 
 [rendering]
 
@@ -73,10 +80,16 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/compress_with_gpu=false
+textures/lossless_compression/force_png=true
 textures/default_filters/anisotropic_filtering_level=0
 anti_aliasing/quality/use_debanding=true
+textures/decals/filter=0
+textures/light_projectors/filter=0
 lightmapping/lightmap_gi/use_bicubic_filter=false
 environment/volumetric_fog/use_filter=0
 textures/basis_universal/rdo_dict_size=64
 textures/basis_universal/zstd_supercompression=false
 textures/basis_universal/zstd_supercompression_level=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true

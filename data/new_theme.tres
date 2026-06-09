@@ -1,10 +1,22 @@
 [gd_resource type="Theme" format=3 uid="uid://bo4o85n6x5w0g"]
 
-[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="1_gmo65"]
-[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="2_ibety"]
+[ext_resource type="Texture2D" uid="uid://cfya8jnxdx12w" path="res://sprites/ui_atlas.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://du5mkms1p7t4t" path="res://fonts/Minecraftia-Regular.ttf" id="2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibety"]
+atlas = ExtResource("1")
+region = Rect2(12, 87, 18, 18)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmo65"]
+texture = SubResource("AtlasTexture_ibety")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0, 0, 0, 0.60784316)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a31go"]
-atlas = ExtResource("2_ibety")
+atlas = ExtResource("1")
 region = Rect2(0, 86, 11, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cn38x"]
@@ -15,7 +27,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 5.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmo65"]
-atlas = ExtResource("2_ibety")
+atlas = ExtResource("1")
 region = Rect2(0, 86, 11, 11)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uscfh"]
@@ -27,6 +39,7 @@ texture_margin_bottom = 5.0
 modulate_color = Color(0, 0, 0, 0.40784314)
 
 [resource]
-TextEdit/fonts/font = ExtResource("1_gmo65")
+Panel/styles/panel = SubResource("StyleBoxTexture_gmo65")
+TextEdit/fonts/font = ExtResource("2")
 TextEdit/styles/focus = SubResource("StyleBoxTexture_cn38x")
 TextEdit/styles/normal = SubResource("StyleBoxTexture_uscfh")
